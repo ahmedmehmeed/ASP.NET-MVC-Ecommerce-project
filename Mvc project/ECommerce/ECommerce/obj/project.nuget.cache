@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MX7ixtlRsgn+ifp3Llaob8u8tSHUdF4Tu02CwHHkGEOtn6OHCBDUtweM9jRq9LgriL3plPhAc+ZX2gdEo3FBww==",
+  "dgSpecHash": "xQbJz1isAyC4NkxW5dn4hK0+OjI/mI1eMLxSyGMBrVVF9JZgBKCi5LkWnFMIA+EdL403zT6zrLCaA6Ar7lTm2g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\FreeComp\\Desktop\\Mvc project\\Mvc project\\ECommerce\\ECommerce\\ECommerce.csproj",
+  "projectFilePath": "C:\\Users\\FreeComp\\Desktop\\ITI\\MVC\\Mvc project\\ECommerce\\ECommerce\\ECommerce.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FreeComp\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\FreeComp\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
