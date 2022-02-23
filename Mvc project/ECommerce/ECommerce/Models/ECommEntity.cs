@@ -22,7 +22,21 @@ namespace ECommerce.Models
         public DbSet<Payment> payments { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-2S4PV11\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-DQIJPSD\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True");
+        }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            // make three prop as primary key
+            modelBuilder.Entity<ProductInfo>().HasKey(table => new {
+                table.Prod_ID,
+                table.Color,
+                table.Image,
+                table.Size
+
+            });
         }
 
     }

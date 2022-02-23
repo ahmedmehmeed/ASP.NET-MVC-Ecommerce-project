@@ -1,5 +1,7 @@
+using ECommerce.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +25,9 @@ namespace ECommerce
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<ECommEntity>(e => e.UseSqlServer(@"Data Source=DESKTOP-DQIJPSD\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True"));
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
