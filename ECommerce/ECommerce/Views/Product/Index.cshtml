@@ -1,0 +1,23 @@
+﻿@model List<Product>
+
+
+
+    <table class ="table table-hover table-bordered table-dark">
+        <tr>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Image</th>
+
+        </tr>
+
+        @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Image</td>
+      
+
+        </tr>
+    }
+</table>
