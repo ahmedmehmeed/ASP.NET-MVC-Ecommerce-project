@@ -203,17 +203,20 @@ namespace ECommerce.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Date")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OldPrice")
+                        .HasColumnType("int");
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
@@ -225,12 +228,31 @@ namespace ECommerce.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("ECommerce.Models.ProductInfo", b =>
+                {
+                    b.Property<int>("Prod_ID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Color")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Size")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Prod_ID", "Color", "Image", "Size");
+
+                    b.ToTable("ProductInfos");
+                });
+
             modelBuilder.Entity("ECommerce.Models.Customer", b =>
                 {
                     b.HasOne("ECommerce.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Product");
@@ -241,19 +263,19 @@ namespace ECommerce.Migrations
                     b.HasOne("ECommerce.Models.Courier", "Courier")
                         .WithMany("Orders")
                         .HasForeignKey("CourierId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ECommerce.Models.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ECommerce.Models.Product", "Product")
                         .WithMany("Orders")
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Courier");
@@ -267,12 +289,13 @@ namespace ECommerce.Migrations
                 {
                     b.HasOne("ECommerce.Models.Category", null)
                         .WithMany("Payments")
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("ECommerce.Models.Customer", "Customer")
                         .WithMany("Payment")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Customer");
@@ -283,10 +306,21 @@ namespace ECommerce.Migrations
                     b.HasOne("ECommerce.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("ECommerce.Models.ProductInfo", b =>
+                {
+                    b.HasOne("ECommerce.Models.Product", "Product")
+                        .WithMany("ProductInfo")
+                        .HasForeignKey("Prod_ID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ECommerce.Models.Category", b =>
@@ -311,6 +345,8 @@ namespace ECommerce.Migrations
             modelBuilder.Entity("ECommerce.Models.Product", b =>
                 {
                     b.Navigation("Orders");
+
+                    b.Navigation("ProductInfo");
                 });
 #pragma warning restore 612, 618
         }

@@ -2,9 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\ECommerce",
-    "\\ECommerce\\ECommerce",
-    "\\ECommerce\\ECommerce\\Controllers"
+    "\\ECommerce\\ECommerce"
   ],
-  "SelectedNode": "\\ECommerce\\ECommerce\\Controllers\\ProductController.cs",
   "PreviewInSolutionExplorer": false
 }

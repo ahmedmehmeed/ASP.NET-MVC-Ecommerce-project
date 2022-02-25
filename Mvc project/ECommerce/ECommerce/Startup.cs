@@ -25,7 +25,7 @@ namespace ECommerce
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<ECommEntity>(e => e.UseSqlServer(@"Data Source=DESKTOP-DQIJPSD\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True"));
+            services.AddDbContext<ECommEntity>(e => e.UseSqlServer(@"Data Source=DESKTOP-JKQGKJ0\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True"));
 
 
         }

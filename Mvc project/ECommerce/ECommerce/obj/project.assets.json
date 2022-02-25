@@ -7153,11 +7153,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FreeComp\\Desktop\\ITI\\MVC\\Mvc project\\ECommerce\\ECommerce\\ECommerce.csproj",
+      "projectUniqueName": "D:\\ITI\\MVC\\Mvc project\\ECommerce\\ECommerce\\ECommerce.csproj",
       "projectName": "ECommerce",
-      "projectPath": "C:\\Users\\FreeComp\\Desktop\\ITI\\MVC\\Mvc project\\ECommerce\\ECommerce\\ECommerce.csproj",
+      "projectPath": "D:\\ITI\\MVC\\Mvc project\\ECommerce\\ECommerce\\ECommerce.csproj",
       "packagesPath": "C:\\Users\\FreeComp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FreeComp\\Desktop\\ITI\\MVC\\Mvc project\\ECommerce\\ECommerce\\obj\\",
+      "outputPath": "D:\\ITI\\MVC\\Mvc project\\ECommerce\\ECommerce\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\FreeComp\\AppData\\Roaming\\NuGet\\NuGet.Config",
