@@ -8,7 +8,6 @@ namespace Ecommerce.Models
         public Courier()
         {
             Orders = new HashSet<Order>();
-
         }
         public int Id { get; set; }
         [Required(ErrorMessage = "You must Enter A Name")]

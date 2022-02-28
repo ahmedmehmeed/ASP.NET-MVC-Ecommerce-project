@@ -11,6 +11,7 @@ namespace Ecommerce.Models
         public Product()
         {
             ProductInfo = new HashSet<ProductInfo>();
+            OrderedProducts = new HashSet<OrderedProduct>();
 
         }
         public int Id { get; set; }
@@ -23,7 +24,7 @@ namespace Ecommerce.Models
         public string Description { get; set; }
         [Required(ErrorMessage = "You must Enter A Price")]
 
-        public int Price { get; set; }
+        public decimal Price { get; set; }
 
         [Required(ErrorMessage = "You must Enter An Image")]
         public string Image { get; set; }
@@ -33,12 +34,12 @@ namespace Ecommerce.Models
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
 
+        //Replace with user
         [ForeignKey("Admin")]
         public int AdminId { get; set; }
-        [ForeignKey("Order")]
-        public int OrderId { get; set; }
+        
         public virtual Admin Admin { get; set; }
-        public virtual Order Order { get; set; }
+        public virtual ICollection<OrderedProduct> OrderedProducts { get; set; }
         public virtual Category Category { get; set; }
         public virtual ICollection<ProductInfo> ProductInfo { get; set; }
 

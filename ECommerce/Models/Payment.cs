@@ -10,11 +10,8 @@ namespace Ecommerce.Models
         public string PaymentAmount { get; set; }
         [Required]
         public string PaymentDate { get; set; }
-        [ForeignKey("Customer")]
-        [Required]
-
+        [ForeignKey("Customer")]  
         public int CustomerId { get; set; }
-
         public virtual Customer Customer { get; set; }
 
     }

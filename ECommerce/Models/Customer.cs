@@ -27,21 +27,18 @@ namespace Ecommerce.Models
 
         [Required(ErrorMessage = "You must Enter Your Email")]
         [EmailAddress]
-        //[unique]
+        [UniqueEmail]
         public string Email { get; set; }
 
 
         [Required(ErrorMessage = "You must Enter Password")]
-
         public string Password { get; set; }
 
 
         [Required(ErrorMessage = "You must Enter Your phone Number")]
-        //[unique]
-
+        [UniquePhone]
         public string PhoneNumber { get; set; }
-        [Required(ErrorMessage = "You must Enter Your Address ")]
-
+        [Required(ErrorMessage = "You must Enter Your Address")]
         public string Address { get; set; }
 
 
