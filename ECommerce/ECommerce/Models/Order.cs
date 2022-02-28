@@ -1,10 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ECommerce.Models
 {
     public class Order
     {
+        public Order()
+        {
+            Products = new HashSet<Product>();
+
+        }
         public int Id { get; set; }
         [Required]
         public string Date { get; set; }
@@ -16,12 +22,9 @@ namespace ECommerce.Models
         [ForeignKey("Customer")]
 
         public int CustomerId { get; set; }
-        [Required]
-       [ForeignKey("Product")]
-        public int ProductId { get; set; }
-
+        
         public virtual Customer Customer { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
         public virtual Courier Courier { get; set; }
     }
 }

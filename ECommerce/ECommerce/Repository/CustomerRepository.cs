@@ -49,12 +49,12 @@ namespace ECommerce.Repository
         {
             Customer customer = new Customer();
 
-            customer.Name = customerModelView.Name;
+            customer.FName = customerModelView.Name;
             customer.Password = customerModelView.Password;
             customer.Email = customerModelView.Email;
             customer.PhoneNumber = customerModelView.PhoneNumber;
             customer.Gender = customerModelView.Gender;
-            customer.DateOfBirth = customerModelView.DateOfBirth;
+            customer.DOB = customerModelView.DateOfBirth;
 
 
             context.Customers.Add(customer);
@@ -65,12 +65,12 @@ namespace ECommerce.Repository
         public void Update(int id, CustomerModelView customerModelView)
         {
             Customer customer = context.Customers.FirstOrDefault(e => e.Id == id);
-            customer.Name = customerModelView.Name;
+            customer.FName = customerModelView.Name;
             customer.Password = customerModelView.Password;
             customer.Email = customerModelView.Email;
             customer.PhoneNumber = customerModelView.PhoneNumber;
             customer.Gender = customerModelView.Gender;
-            customer.DateOfBirth = customerModelView.DateOfBirth;
+            customer.DOB = customerModelView.DateOfBirth;
 
             context.SaveChanges();
 

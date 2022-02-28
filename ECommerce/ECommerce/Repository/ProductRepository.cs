@@ -60,10 +60,8 @@ namespace ECommerce.Repository
 
             Product.Name = productModelView.Name;
             Product.Price = productModelView.Price;
-            Product.OldPrice = productModelView.OldPrice;
             Product.CategoryId = productModelView.CategoryId;
             Product.Description = productModelView.Description;
-            Product.Date = DateTime.Now.ToString("dd-MM-yyyy");
             Product.Description = productModelView.Description;
             Product.Image = productModelView.Image;
 
@@ -77,8 +75,7 @@ namespace ECommerce.Repository
         {
             Product oldproduct = context.Products.FirstOrDefault(e => e.Id == id);
             oldproduct.Name = productModelView.Name;
-            oldproduct.Price = productModelView.Price;
-            oldproduct.OldPrice = productModelView.OldPrice;
+            oldproduct.Price = productModelView.Price;     
             oldproduct.CategoryId = productModelView.CategoryId;
             oldproduct.Description = productModelView.Description;
             oldproduct.Date = DateTime.Now.ToString("dd-MM-yyyy");

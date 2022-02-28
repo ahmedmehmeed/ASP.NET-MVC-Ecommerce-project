@@ -4,9 +4,12 @@ namespace ECommerce.ModelViews
 {
     public class AdminModelView
     {
-        [Required(ErrorMessage = "You must Enter A Name")]
+        [Required(ErrorMessage = "You must Enter Your First Name")]
 
-        public string Name { get; set; }
+        public string FName { get; set; }
+        [Required(ErrorMessage = "You must Enter Your Last Name")]
+
+        public string LName { get; set; }
         [Required(ErrorMessage = "You must Enter A Date OF Birth ")]
 
         public string DateOfBirth { get; set; }
