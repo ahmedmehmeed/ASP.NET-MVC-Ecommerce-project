@@ -7404,19 +7404,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FreeComp\\.nuget\\packages\\": {}
+    "C:\\Users\\mm\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FreeComp\\Desktop\\Project\\Ecommerce\\Ecommerce.csproj",
+      "projectUniqueName": "E:\\Mvc project\\MVC\\Ecommerce\\Ecommerce.csproj",
       "projectName": "Ecommerce",
-      "projectPath": "C:\\Users\\FreeComp\\Desktop\\Project\\Ecommerce\\Ecommerce.csproj",
-      "packagesPath": "C:\\Users\\FreeComp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FreeComp\\Desktop\\Project\\Ecommerce\\obj\\",
+      "projectPath": "E:\\Mvc project\\MVC\\Ecommerce\\Ecommerce.csproj",
+      "packagesPath": "C:\\Users\\mm\\.nuget\\packages\\",
+      "outputPath": "E:\\Mvc project\\MVC\\Ecommerce\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\FreeComp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mm\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7475,6 +7475,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.12, 5.0.12]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7483,7 +7489,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
