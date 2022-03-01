@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Ecommerce.Models
 {
@@ -31,7 +32,29 @@ namespace Ecommerce.Models
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-2S4PV11\\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True");
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
 
-       
+            // add restrict on delete 
+
+            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+
+
+
+
+            base.OnModelCreating(modelBuilder);
+            // make three prop as primary key
+            modelBuilder.Entity<ProductInfo>().HasKey(table => new {
+                table.Prod_ID,
+                table.Color,
+                table.Image,
+                table.Size
+
+            });
+        }
+
     }
 }
