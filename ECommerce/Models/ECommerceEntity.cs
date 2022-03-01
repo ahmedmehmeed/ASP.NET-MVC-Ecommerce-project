@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Models
 {
-    public class ECommerceEntity:DbContext
+    public class ECommerceEntity:IdentityDbContext
     {
         public ECommerceEntity()
         {
@@ -28,5 +29,8 @@ namespace Ecommerce.Models
             //don't forget to change!!
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-2S4PV11\\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True");
         }
+
+
+       
     }
 }

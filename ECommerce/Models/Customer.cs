@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ecommerce.Models
 {
@@ -11,7 +13,17 @@ namespace Ecommerce.Models
             Payments = new HashSet<Payment>();
 
         }
+        [Key]
+        [ForeignKey("IdentityUser")]
         public int Id { get; set; }
+
+
+        [Required(ErrorMessage = "You must Enter Email")]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "You must Enter A Date OF Birth ")]
+        public string PhoneNumber { get; set; }
 
         [Required(ErrorMessage = "You must Enter A First Name")]
         public string FName { get; set; }
@@ -23,29 +35,7 @@ namespace Ecommerce.Models
 
         [Required(ErrorMessage = "You must Enter A Date OF Birth ")]
         public string DOB { get; set; }
-
-
-        [Required(ErrorMessage = "You must Enter Your Email")]
-        [EmailAddress]
-        [UniqueEmail]
-        public string Email { get; set; }
-
-
-        [Required(ErrorMessage = "You must Enter Password")]
-        public string Password { get; set; }
-
-
-        [Required(ErrorMessage = "You must Enter Your phone Number")]
-        [UniquePhone]
-        public string PhoneNumber { get; set; }
-        [Required(ErrorMessage = "You must Enter Your Address")]
-        public string Address { get; set; }
-
-
-        //must be male or female
-        public string Gender { get; set; }
-
-
+        public IdentityUser IdentityUser { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<Payment> Payments { get; set; }
 

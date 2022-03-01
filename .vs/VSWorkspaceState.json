@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\ECommerce",
-    "\\ECommerce\\ECommerce",
-    "\\ECommerce\\ECommerce\\Controllers"
+    "\\ECommerce\\Models"
   ],
-  "SelectedNode": "\\ECommerce\\ECommerce\\Controllers",
+  "SelectedNode": "\\ECommerce\\Models\\Category.cs",
   "PreviewInSolutionExplorer": false
 }

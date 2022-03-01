@@ -1,5 +1,7 @@
+using Ecommerce.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +25,10 @@ namespace Ecommerce
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            // inject role identity
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ECommerceEntity>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
