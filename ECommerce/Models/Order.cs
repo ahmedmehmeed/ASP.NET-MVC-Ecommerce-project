@@ -8,23 +8,21 @@ namespace Ecommerce.Models
     {
         public Order()
         {
-            Products = new HashSet<Product>();
+            OrderedProducts = new HashSet<OrderedProduct>();
 
         }
         public int Id { get; set; }
         [Required]
         public string Date { get; set; }
-        [Required]
+        
         [ForeignKey("Courier")]
-
         public int CourierId { get; set; }
-        [Required]
-        [ForeignKey("Customer")]
 
+        [ForeignKey("Customer")]
         public int CustomerId { get; set; }
 
         public virtual Customer Customer { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<OrderedProduct> OrderedProducts { get; set; }
         public virtual Courier Courier { get; set; }
     
 }
