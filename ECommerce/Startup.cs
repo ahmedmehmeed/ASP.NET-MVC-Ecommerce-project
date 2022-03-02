@@ -25,7 +25,7 @@ namespace Ecommerce
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            // inject role identity
+            // inject user, role identity
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ECommerceEntity>();
 
 
