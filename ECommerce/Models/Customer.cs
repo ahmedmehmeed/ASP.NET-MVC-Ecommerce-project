@@ -14,9 +14,10 @@ namespace Ecommerce.Models
 
         }
         [Key]
-        [ForeignKey("IdentityUser")]
         public int Id { get; set; }
 
+        [ForeignKey("IdentityUser")]
+        public string CustomerId { get; set; }
 
         [Required(ErrorMessage = "You must Enter Email")]
         [DataType(DataType.EmailAddress)]

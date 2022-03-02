@@ -34,6 +34,8 @@ namespace Ecommerce.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
 
             // add restrict on delete 
 
@@ -54,6 +56,16 @@ namespace Ecommerce.Models
                 table.Size
 
             });
+
+
+
+            modelBuilder.Entity<OrderedProduct>().HasKey(table => new {
+                table.OrderId,
+                table.ProductId,
+            
+            });
+
+
         }
 
     }

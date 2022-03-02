@@ -7,8 +7,9 @@ namespace Ecommerce.Models
 {
     public class Admin
     {   [Key]
+        public int Id { get; set; } 
         [ForeignKey("IdentityUser")]
-        public int User_Id { get; set; }
+        public string User_Id { get; set; }
         [Required]
         public string Image { get; set; }
 

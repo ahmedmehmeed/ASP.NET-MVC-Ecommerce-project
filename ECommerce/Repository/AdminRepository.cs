@@ -18,7 +18,7 @@ namespace Ecommerce.Repository
         }
         public void Delete(int id)
         {
-            Admin admin=Db.Admins.FirstOrDefault(e=>e.User_Id==id);
+            Admin admin=Db.Admins.FirstOrDefault(e=>e.Id==id);
             Db.Admins.Remove(admin);
             Db.SaveChanges();
         }
@@ -29,7 +29,7 @@ namespace Ecommerce.Repository
         }
         public Admin GetById(int id)
         {
-            Admin admin = Db.Admins.FirstOrDefault(e => e.User_Id == id);
+            Admin admin = Db.Admins.FirstOrDefault(e => e.Id == id);
             return admin;
 
         }
@@ -44,7 +44,7 @@ namespace Ecommerce.Repository
 
         public void Update(int id,Admin admin)
         {
-            Admin oldAdmin = Db.Admins.FirstOrDefault(e => e.User_Id == id);
+            Admin oldAdmin = Db.Admins.FirstOrDefault(e => e.Id == id);
             oldAdmin.Image = admin.Image;
             Db.SaveChanges();
    

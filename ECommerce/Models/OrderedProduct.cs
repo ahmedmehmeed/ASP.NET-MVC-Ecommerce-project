@@ -5,11 +5,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Ecommerce.Models
 {
     public class OrderedProduct
+        // key composite should be in model create
     {
-        [Key, ForeignKey("Product"), Column(Order = 0)]
+        [ForeignKey("Product")]
         public int ProductId { get; set; }
 
-        [Key, ForeignKey("Order"), Column(Order = 1)]
+        [ ForeignKey("Order")]
         public int OrderId { get; set; }
         public int Quantity { get; set; }
 
