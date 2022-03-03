@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Ecommerce.Repository
 {
-    public class CourierRepository
+    public class CourierRepository : ICourierRepository
     {
         private readonly ECommerceEntity Db;
 
@@ -60,7 +60,7 @@ namespace Ecommerce.Repository
             courier.LName = Newcourier.LName;
 
             courier.PhoneNumber = Newcourier.PhoneNumber;
-            
+
             Db.SaveChanges();
 
         }

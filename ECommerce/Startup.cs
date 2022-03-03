@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ecommerce.Repository;
 
 namespace Ecommerce
 {
@@ -25,13 +26,19 @@ namespace Ecommerce
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+           
             services.AddDbContext<ECommerceEntity>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("LocalCs")));
             services.AddControllersWithViews();
             // inject user, role identity
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<ECommerceEntity>();
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ECommerceEntity>();
+            services.AddScoped<IPaymentRepository,PaymentRepository>();
+            services.AddScoped<ICourierRepository, CourierRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IProductInfoRepository, ProductInfoRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+
 
 
         }

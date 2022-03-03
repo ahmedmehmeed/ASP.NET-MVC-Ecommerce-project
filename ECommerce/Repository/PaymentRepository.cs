@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Ecommerce.Repository
 {
-    public class PaymentRepository
+    public class PaymentRepository : IPaymentRepository
     {
         private readonly ECommerceEntity Db;
 
@@ -47,7 +47,6 @@ namespace Ecommerce.Repository
         public void Insert(Payment payment)
         {
 
-          
             Db.payments.Add(payment);
             Db.SaveChanges();
 
@@ -59,9 +58,10 @@ namespace Ecommerce.Repository
             payment.PaymentDate = Newpayment.PaymentDate;
             payment.PaymentAmount = Newpayment.PaymentAmount;
             payment.CustomerId = Newpayment.CustomerId;
-       
+
             Db.SaveChanges();
 
         }
+
     }
 }

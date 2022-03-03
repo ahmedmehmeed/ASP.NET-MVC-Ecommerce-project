@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Ecommerce.Repository
 {
-    public class ProductInfoRepository
+    public class ProductInfoRepository : IProductInfoRepository
     {
         private readonly ECommerceEntity Db;
 
@@ -58,7 +58,7 @@ namespace Ecommerce.Repository
             productInfo.Image = NewproductInfo.Image;
             productInfo.Color = NewproductInfo.Color;
             productInfo.Size = NewproductInfo.Size;
-          
+
             Db.SaveChanges();
 
         }
