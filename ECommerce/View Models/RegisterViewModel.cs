@@ -1,10 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Ecommerce.View_Models
 {
     public class RegisterViewModel
     {
-     
+        [Required(ErrorMessage = "You must Enter A Username")]
+        
+        public string UserName { get; set; }
 
         [Required(ErrorMessage = "You must Enter A First Name")]
         public string FName { get; set; }
