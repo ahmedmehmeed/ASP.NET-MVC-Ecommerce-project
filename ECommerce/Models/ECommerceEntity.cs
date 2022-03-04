@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Ecommerce.View_Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
@@ -29,7 +30,7 @@ namespace Ecommerce.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //don't forget to change!!
-            optionsBuilder.UseSqlServer("Data Source=LAPTOP-RTRM9B61\\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-JKQGKJ0\\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True");
             optionsBuilder.UseLazyLoadingProxies();
         }
 
@@ -70,7 +71,16 @@ namespace Ecommerce.Models
                 table.CartId,
                 table.ProductId,
             });
+
+
+            modelBuilder.Entity<LoginViewModel>().HasKey(table => new {
+                table.username,
+                
+            });
+
         }
+
+        public DbSet<Ecommerce.View_Models.LoginViewModel> LoginViewModel { get; set; }
 
     }
 }

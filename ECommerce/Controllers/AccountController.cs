@@ -1,4 +1,6 @@
-﻿using Ecommerce.View_Models;
+﻿using Ecommerce.Models;
+using Ecommerce.Repository;
+using Ecommerce.View_Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -7,11 +9,16 @@ namespace Ecommerce.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<IdentityUser> userManager;
+        //Cusstomer repository في مشكله علشان كدا مش عارف استخدم ال 
+        ECommerceEntity ECommerceEntity =new ECommerceEntity();
 
-        public AccountController(UserManager<IdentityUser> userManager)
+        private readonly UserManager<IdentityUser> userManager;
+        private readonly SignInManager<IdentityUser> signInManager;
+
+        public AccountController(UserManager<IdentityUser> _userManager,SignInManager<IdentityUser> _signInManager)
         {
-            this.userManager = userManager;
+            this.userManager = _userManager;
+            this.signInManager = _signInManager;
         }
       // register
       [HttpGet]
@@ -22,22 +29,35 @@ namespace Ecommerce.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async  Task<IActionResult> Register(RegisterViewModel  newUser)
+        public async  Task<IActionResult> Register(RegisterViewModel customerViewModel)
         {
             if (ModelState.IsValid)
             {
-                IdentityUser user = new IdentityUser();
-                user.UserName = newUser.UserName;
-                user.Email = newUser.Email;
-                user.PhoneNumber = newUser.PhoneNumber;
-                user.PasswordHash = newUser.Password;
+                IdentityUser IdentityUser = new IdentityUser();
+                IdentityUser.UserName = customerViewModel.UserName;
+                IdentityUser.Email = customerViewModel.Email;
+                IdentityUser.PhoneNumber = customerViewModel.PhoneNumber;
+                IdentityUser.PasswordHash = customerViewModel.Password;
 
-                IdentityResult result =  await userManager.CreateAsync(user,newUser.Password);
+                IdentityResult result =  await userManager.CreateAsync(IdentityUser, customerViewModel.Password);
                 if(result.Succeeded)
                 {
-                    //save success
+                    IdentityUser user    =  await userManager.FindByNameAsync(customerViewModel.UserName);
+
+                    Customer customer = new Customer();
+                    customer.FName = customerViewModel.FName;
+                    customer.LName = customerViewModel.LName;
+                    customer.CustomerId=user.Id;
+                    ECommerceEntity.Customers.Add(customer);
+                    ECommerceEntity.SaveChanges();
+
+
+                    //save success cookie to save login in client
+                    await signInManager.SignInAsync(IdentityUser, false);
 
                     //authorize id cookie
+
+
                 }
                 else
                 {
@@ -47,7 +67,47 @@ namespace Ecommerce.Controllers
                     }
                 }
             }
-            return View(newUser);
+            return View(customerViewModel);
         }
+
+
+
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+
+            return View();
+        }
+
+
+
+        [HttpPost]
+        public async Task< IActionResult> Login(LoginViewModel loginView)
+        {
+            if (ModelState.IsValid)
+            {
+              var User= await userManager.FindByNameAsync(loginView.username);
+                if (User != null)
+                {
+
+                  await  signInManager.PasswordSignInAsync(User,loginView.password,loginView.persist,false);
+                    return RedirectToAction("Index", "Product");
+
+                }
+                else
+                {
+                    ModelState.AddModelError("", "username & password invalid");
+                }
+
+
+
+            }
+
+
+
+            return View(loginView);
+        }
+
     }
 }

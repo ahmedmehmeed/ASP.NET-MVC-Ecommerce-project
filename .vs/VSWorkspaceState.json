@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\ECommerce",
-    "\\ECommerce\\Models"
+    "\\ECommerce\\Models",
+    "\\ECommerce\\Repository"
   ],
-  "SelectedNode": "\\ECommerce\\Models\\Customer.cs",
+  "SelectedNode": "\\ECommerce\\Repository\\AdminRepository.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -1,4 +1,6 @@
 ﻿using Ecommerce.Models;
+using Ecommerce.View_Models;
+using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -34,12 +36,9 @@ namespace Ecommerce.Repository
 
 
 
-        public void Insert(Customer customer)
-        {
-
-         
-            Db.Customers.Add(customer);
-            Db.SaveChanges();
+        public void Insert(RegisterViewModel customerViewModel)
+        { 
+            
         }
 
         public void Update(int id, Customer Newcustomer)
@@ -47,11 +46,8 @@ namespace Ecommerce.Repository
             Customer customer = Db.Customers.FirstOrDefault(e => e.Id == id);
             customer.FName = Newcustomer.FName;
             customer.LName = Newcustomer.LName;
-            customer.Email = Newcustomer.Email;
-            customer.PhoneNumber = Newcustomer.PhoneNumber;
-            customer.DOB = Newcustomer.DOB;
-
-            Db.SaveChanges();
+  
+                      Db.SaveChanges();
 
         }
         public void Delete(int id)

@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Castle.Components.DictionaryAdapter;
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 namespace Ecommerce.View_Models
 {
     public class RegisterViewModel
     {
+     
         [Required(ErrorMessage = "You must Enter A Username")]
-        
+       
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "You must Enter A First Name")]
@@ -20,16 +22,13 @@ namespace Ecommerce.View_Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "You must Enter A Date OF Birth ")]
-        public string DOB { get; set; }
-
-        [Required(ErrorMessage = "You must Enter A Date OF Birth ")]
         public string PhoneNumber { get; set; }
 
         [Required(ErrorMessage = "You must Enter Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
         [DataType(DataType.Password)]
-        [Compare("Password",ErrorMessage ="Not matched")]
+        [Compare("Password", ErrorMessage = "Not matched")]
         [Required(ErrorMessage = "You must Enter Confirm Password ")]
         public string Confirmpassword { get; set; }
 

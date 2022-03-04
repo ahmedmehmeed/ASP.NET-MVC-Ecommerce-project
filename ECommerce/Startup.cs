@@ -31,7 +31,9 @@ namespace Ecommerce
                 options.UseSqlServer(Configuration.GetConnectionString("LocalCs")));
             services.AddControllersWithViews();
             // inject user, role identity
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ECommerceEntity>();
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                
+                .AddEntityFrameworkStores<ECommerceEntity>();
             services.AddScoped<IPaymentRepository,PaymentRepository>();
             services.AddScoped<ICourierRepository, CourierRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
