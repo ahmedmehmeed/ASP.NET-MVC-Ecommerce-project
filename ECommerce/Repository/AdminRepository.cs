@@ -7,11 +7,8 @@ namespace Ecommerce.Repository
 {
     public class AdminRepository
     {
-        private readonly ECommerceEntity Db;
-        public AdminRepository()
-        {
-
-        }
+        ECommerceEntity Db;
+       
         public AdminRepository(ECommerceEntity _Db)
         {
             Db = _Db;
