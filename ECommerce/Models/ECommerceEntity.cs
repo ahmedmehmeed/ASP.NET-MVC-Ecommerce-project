@@ -21,6 +21,8 @@ namespace Ecommerce.Models
         public DbSet<Courier> couriers { get; set; }
         public DbSet<Courier> Courses { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<CheckOutViewModel> checkOuts { get; set; }
+
         public DbSet<Order> Orders { get; set; }
         public DbSet<Payment> payments { get; set; }
         public DbSet<Cart> Carts { get; set; }
@@ -30,7 +32,7 @@ namespace Ecommerce.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //don't forget to change!!
-            optionsBuilder.UseSqlServer("Data Source=LAPTOP-RTRM9B61\\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-2S4PV11\\SQLEXPRESS;Initial Catalog=ECommerceDB2;Integrated Security=True");
             optionsBuilder.UseLazyLoadingProxies();
         }
 
@@ -67,10 +69,13 @@ namespace Ecommerce.Models
                 
 
                 });
+
             modelBuilder.Entity<ProductCart>().HasKey(table => new {
                 table.CartId,
                 table.ProductId,
             });
+
+
 
 
             modelBuilder.Entity<LoginViewModel>().HasKey(table => new {
@@ -78,9 +83,16 @@ namespace Ecommerce.Models
                 
             });
 
+            modelBuilder.Entity<RoleViewModel>().HasKey(table => new {
+                table.Role,
+
+            });
+
         }
 
         public DbSet<Ecommerce.View_Models.LoginViewModel> LoginViewModel { get; set; }
+
+        public DbSet<Ecommerce.View_Models.RoleViewModel> RoleViewModel { get; set; }
 
     }
 }

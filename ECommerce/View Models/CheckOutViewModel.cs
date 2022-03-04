@@ -15,6 +15,7 @@ namespace Ecommerce.View_Models
 
         [Required(ErrorMessage = "You must Enter A Username")]
         [UniqueUserName]
+        [Key]
         public string UserName { get; set; }
 
 
