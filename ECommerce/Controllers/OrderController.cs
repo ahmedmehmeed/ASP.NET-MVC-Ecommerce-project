@@ -57,7 +57,12 @@ namespace Ecommerce.Controllers
             else
                 return View("Edit", NewOrder);
         }
+        public IActionResult Delete(int id)
+        {
 
+            orderRepository.Delete(id);
+            return RedirectToAction("Index");
+        }
 
     }
 }

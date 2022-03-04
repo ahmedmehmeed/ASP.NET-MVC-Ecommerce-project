@@ -30,6 +30,7 @@ namespace Ecommerce.Models
         {
             //don't forget to change!!
             optionsBuilder.UseSqlServer("Data Source=LAPTOP-RTRM9B61\\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True");
+            optionsBuilder.UseLazyLoadingProxies();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -62,10 +63,13 @@ namespace Ecommerce.Models
             modelBuilder.Entity<OrderedProduct>().HasKey(table => new {
                 table.OrderId,
                 table.ProductId,
-            
+                
+
+                });
+            modelBuilder.Entity<ProductCart>().HasKey(table => new {
+                table.CartId,
+                table.ProductId,
             });
-
-
         }
 
     }

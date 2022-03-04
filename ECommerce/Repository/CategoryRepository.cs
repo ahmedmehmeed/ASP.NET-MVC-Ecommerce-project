@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Ecommerce.Repository
 {
-    public class CategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
         private readonly ECommerceEntity Db;
 

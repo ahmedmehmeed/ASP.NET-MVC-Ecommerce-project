@@ -12,7 +12,7 @@ namespace Ecommerce.Models
         {
             ProductInfo = new HashSet<ProductInfo>();
             OrderedProducts = new HashSet<OrderedProduct>();
-
+            ProductCarts = new HashSet<ProductCart>();
         }
         public int Id { get; set; }
 
@@ -42,6 +42,8 @@ namespace Ecommerce.Models
         public virtual ICollection<OrderedProduct> OrderedProducts { get; set; }
         public virtual Category Category { get; set; }
         public virtual ICollection<ProductInfo> ProductInfo { get; set; }
+        public virtual ICollection<ProductCart> ProductCarts { get; set; }
+
 
     }
 }

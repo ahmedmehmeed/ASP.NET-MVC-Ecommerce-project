@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Ecommerce.Repository
 {
-    public class OrderRepository
+    public class OrderRepository : IOrderRepository
     {
         private readonly ECommerceEntity Db;
 
@@ -30,7 +30,7 @@ namespace Ecommerce.Repository
 
         public List<Order> Getall()
         {
-            List<Order>  orderlist = Db.Orders.ToList();
+            List<Order> orderlist = Db.Orders.ToList();
             return orderlist;
         }
 
@@ -56,10 +56,10 @@ namespace Ecommerce.Repository
         public void Update(int id, Order Neworder)
         {
             Order order = Db.Orders.FirstOrDefault(e => e.Id == id);
-            order.Date= Neworder.Date;
+            order.Date = Neworder.Date;
             order.CourierId = Neworder.CourierId;
             order.CustomerId = Neworder.CustomerId;
-          
+
             Db.SaveChanges();
 
         }

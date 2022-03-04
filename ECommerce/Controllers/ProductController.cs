@@ -60,6 +60,11 @@ namespace Ecommerce.Controllers
                 return View("Edit", Newproduct);
         }
 
+        public IActionResult Delete(int id)
+        {
 
+            productReposit.Delete(id);
+            return RedirectToAction("Index");
+        }
     }
 }
