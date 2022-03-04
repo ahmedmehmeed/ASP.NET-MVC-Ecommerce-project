@@ -22,8 +22,6 @@ namespace Ecommerce.Models
         public DbSet<Courier> Courses { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<CheckOutViewModel> checkOuts { get; set; }
-
         public DbSet<Payment> payments { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<ProductInfo> ProductInfos { get; set; }
@@ -32,7 +30,7 @@ namespace Ecommerce.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //don't forget to change!!
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-2S4PV11\\SQLEXPRESS;Initial Catalog=ECommerceDB2;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Data Source=LAPTOP-RTRM9B61\\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True");
             optionsBuilder.UseLazyLoadingProxies();
         }
 

@@ -6,12 +6,8 @@ namespace Ecommerce.Repository
 {
     public class ProductInfoRepository : IProductInfoRepository
     {
-        private readonly ECommerceEntity Db;
+        ECommerceEntity Db;
 
-        public ProductInfoRepository()
-        {
-
-        }
 
         public ProductInfoRepository(ECommerceEntity _Db)
         {

@@ -9,20 +9,20 @@ namespace Ecommerce.Controllers
 {
     public class ProductController : Controller
     {
-        ProductRepository productReposit;
-        public ProductController()
+        IProductRepository productRepository;
+        public ProductController(IProductRepository productRepository)
         {
-            productReposit = new ProductRepository();
+            this.productRepository = productRepository;
         }
         public IActionResult Index()
         {
-            List<Product> productsModel = productReposit.Getall();
+            List<Product> productsModel = productRepository.Getall();
             return View(productsModel);
         }
 
         public IActionResult Details(int id)
         {
-            Product product = productReposit.GetById(id);
+            Product product = productRepository.GetById(id);
             return View(product);
         }
 
@@ -35,7 +35,7 @@ namespace Ecommerce.Controllers
             if (ModelState.IsValid)
             {
 
-                productReposit.Insert(NewProduct);
+                productRepository.Insert(NewProduct);
                 return RedirectToAction("Index");
             }
             else
@@ -44,7 +44,7 @@ namespace Ecommerce.Controllers
 
         public IActionResult Edit(int id)
         {
-            Product product = productReposit.GetById(id);
+            Product product = productRepository.GetById(id);
             return View(product);
         }
         [HttpPost]
@@ -53,7 +53,7 @@ namespace Ecommerce.Controllers
         {
             if (ModelState.IsValid == true)
             {
-                productReposit.Update(id, Newproduct);
+                productRepository.Update(id, Newproduct);
                 return RedirectToAction("Index");
             }
             else
@@ -63,7 +63,7 @@ namespace Ecommerce.Controllers
         public IActionResult Delete(int id)
         {
 
-            productReposit.Delete(id);
+            productRepository.Delete(id);
             return RedirectToAction("Index");
         }
     }

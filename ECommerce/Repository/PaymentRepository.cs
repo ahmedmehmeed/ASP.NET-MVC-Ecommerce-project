@@ -6,12 +6,8 @@ namespace Ecommerce.Repository
 {
     public class PaymentRepository : IPaymentRepository
     {
-        private readonly ECommerceEntity Db;
+        ECommerceEntity Db;
 
-        public PaymentRepository()
-        {
-
-        }
 
         public PaymentRepository(ECommerceEntity _Db)
         {

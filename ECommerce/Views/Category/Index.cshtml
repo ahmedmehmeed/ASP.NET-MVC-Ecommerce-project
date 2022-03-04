@@ -1,0 +1,29 @@
+﻿@model List<Category>
+
+<table class = "table table-hover table-bordered ">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+
+    </tr>
+    @foreach(var i in Model)
+    {
+        <tr>
+            <td>@i.Id</td>
+            <td>@i.Name</td>
+
+            <td><a asp-action="Edit" asp-controller="Category" asp-route-id = "@i.Id">Edit Category</a></td>
+            <td><a asp-action="Delete" asp-controller="Category" asp-route-id = "@i.Id" onclick="ConfirmDelete()">Delete</a></td>
+        </tr>
+    }
+</table>
+<a  asp-action="Add" asp-controller="Category"  class="btn btn-primary">Add New</a>
+ 
+<script>
+    function ConfirmDelete(){
+        var confirmed=confirm("Are You Sure?");
+        if(confirmed==false){
+            event.preventDefault();
+        }
+    } 
+</script>

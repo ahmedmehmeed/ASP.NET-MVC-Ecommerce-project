@@ -8,12 +8,8 @@ namespace Ecommerce.Repository
 {
     public class CustomerRepository
     {
-        private readonly ECommerceEntity Db;
+         ECommerceEntity Db;
 
-        public CustomerRepository()
-        {
-
-        }
 
         public CustomerRepository(ECommerceEntity _Db)
         {

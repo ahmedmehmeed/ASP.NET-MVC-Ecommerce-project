@@ -6,12 +6,7 @@ namespace Ecommerce.Repository
 {
     public class CategoryRepository : ICategoryRepository
     {
-        private readonly ECommerceEntity Db;
-
-        public CategoryRepository()
-        {
-
-        }
+        ECommerceEntity Db;
 
         public CategoryRepository(ECommerceEntity _Db)
         {
@@ -34,10 +29,8 @@ namespace Ecommerce.Repository
         public void Insert(Category category)
         {
 
-
             Db.Categories.Add(category);
             Db.SaveChanges();
-
         }
 
         public void Update(int id, Category newcategory)
