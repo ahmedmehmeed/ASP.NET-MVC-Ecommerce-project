@@ -1,6 +1,7 @@
 ﻿using Ecommerce.Models;
 using Ecommerce.Repository;
 using Ecommerce.View_Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -22,6 +23,8 @@ namespace Ecommerce.Controllers
         }
       // register
       [HttpGet]
+
+      [Authorize]
         public IActionResult Register()
         {
             return View();
@@ -71,7 +74,7 @@ namespace Ecommerce.Controllers
         }
 
 
-
+        // login 
 
         [HttpGet]
         public IActionResult Login()
@@ -91,8 +94,14 @@ namespace Ecommerce.Controllers
                 if (User != null)
                 {
 
-                  await  signInManager.PasswordSignInAsync(User,loginView.password,loginView.persist,false);
-                    return RedirectToAction("Index", "Product");
+                 var log = await  signInManager.PasswordSignInAsync(User,loginView.password,loginView.persist,false);
+                    if (log.Succeeded)
+                    {
+                        return View("Register");
+                    }
+                    else
+                        ModelState.AddModelError("", "password invalid");
+
 
                 }
                 else
@@ -108,6 +117,21 @@ namespace Ecommerce.Controllers
 
             return View(loginView);
         }
+
+
+
+
+        public IActionResult  Logout()
+        {
+            signInManager.SignOutAsync();
+
+            return RedirectToAction("Login");
+        }
+
+
+
+
+
 
     }
 }
