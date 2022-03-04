@@ -59,8 +59,8 @@ namespace Ecommerce
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseAuthorization();
+            app.UseAuthentication();    //check cookies  found or not
+            app.UseAuthorization();     // check role
 
             app.UseEndpoints(endpoints =>
             {
