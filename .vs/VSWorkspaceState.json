@@ -2,9 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\ECommerce",
+    "\\ECommerce\\Controllers",
     "\\ECommerce\\Models",
-    "\\ECommerce\\Repository"
+    "\\ECommerce\\Repository",
+    "\\ECommerce\\Views",
+    "\\ECommerce\\Views\\Account"
   ],
-  "SelectedNode": "\\Ecommerce.sln",
+  "SelectedNode": "\\ECommerce\\Controllers\\AccountController.cs",
   "PreviewInSolutionExplorer": false
 }

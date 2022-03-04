@@ -76,14 +76,23 @@ namespace Ecommerce.Models
             });
 
 
+
+
             modelBuilder.Entity<LoginViewModel>().HasKey(table => new {
                 table.username,
                 
             });
 
+            modelBuilder.Entity<RoleViewModel>().HasKey(table => new {
+                table.Role,
+
+            });
+
         }
 
         public DbSet<Ecommerce.View_Models.LoginViewModel> LoginViewModel { get; set; }
+
+        public DbSet<Ecommerce.View_Models.RoleViewModel> RoleViewModel { get; set; }
 
     }
 }
