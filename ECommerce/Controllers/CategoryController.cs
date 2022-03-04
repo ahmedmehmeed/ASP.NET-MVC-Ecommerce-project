@@ -3,6 +3,7 @@ using Ecommerce.Repository;
 using Ecommerce.Models;
 using Ecommerce.View_Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Ecommerce.Controllers
 {
@@ -30,14 +31,17 @@ namespace Ecommerce.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult SaveAdd(Category NewCetgory)
+        public  IActionResult SaveAdd(Category NewCetgory)
         {
             if (ModelState.IsValid)
             {
-                categoryRepository.Insert(NewCetgory);
-                return RedirectToAction("Index");
-            }
-            else
+               
+                    categoryRepository.Insert(NewCetgory);
+                    return RedirectToAction("Index");
+                
+                
+            }else
+            
                 return View("Add", NewCetgory);
         }
         
