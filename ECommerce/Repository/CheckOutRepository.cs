@@ -5,9 +5,10 @@ using System.Linq;
 
 namespace Ecommerce.Repository
 {
-    public class CheckOutRepository
+    public class CheckOutRepository : ICheckOutRepository
     {
         private readonly ECommerceEntity Db;
+
 
         public CheckOutRepository()
         {

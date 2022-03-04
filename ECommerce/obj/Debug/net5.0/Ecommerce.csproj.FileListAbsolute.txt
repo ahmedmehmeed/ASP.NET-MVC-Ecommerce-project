@@ -1740,3 +1740,4 @@ E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Order\Add.cshtml.g.cs
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Order\Edit.cshtml.g.cs
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Order\Delete.cshtml.g.cs
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Courier\Index.cshtml.g.cs
+E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Checkout\Details.cshtml.g.cs
