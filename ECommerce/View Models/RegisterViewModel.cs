@@ -21,7 +21,7 @@ namespace Ecommerce.View_Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "You must Enter A Date OF Birth ")]
+        [Required(ErrorMessage = "You must Enter Your PhoneNumber ")]
         public string PhoneNumber { get; set; }
 
         [Required(ErrorMessage = "You must Enter Password")]

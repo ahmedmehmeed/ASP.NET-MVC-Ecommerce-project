@@ -270,6 +270,23 @@ namespace Ecommerce.Migrations
                     b.ToTable("ProductInfos");
                 });
 
+            modelBuilder.Entity("Ecommerce.View_Models.LoginViewModel", b =>
+                {
+                    b.Property<string>("username")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("persist")
+                        .HasColumnType("bit");
+
+                    b.HasKey("username");
+
+                    b.ToTable("LoginViewModel");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
