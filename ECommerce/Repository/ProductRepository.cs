@@ -9,16 +9,10 @@ namespace Ecommerce.Repository
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly ECommerceEntity Db;
-
-        public ProductRepository()
-        {
-
-        }
-
+        ECommerceEntity Db;
         public ProductRepository(ECommerceEntity _Db)
         {
-            Db = _Db;
+            _Db = Db;
         }
 
         public List<Product> Getall()

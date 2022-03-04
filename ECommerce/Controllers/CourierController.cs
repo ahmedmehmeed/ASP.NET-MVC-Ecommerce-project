@@ -7,10 +7,10 @@ namespace Ecommerce.Controllers
 {
     public class CourierController : Controller
     {
-        CourierRepository courierRepository;
-        public CourierController()
+        ICourierRepository courierRepository;
+        public CourierController(ICourierRepository courierRepository)
         {
-            courierRepository = new CourierRepository();
+            this.courierRepository = courierRepository;
         }
         public IActionResult Index()
         {

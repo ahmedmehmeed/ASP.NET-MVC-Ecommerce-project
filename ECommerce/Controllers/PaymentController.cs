@@ -7,10 +7,10 @@ namespace Ecommerce.Controllers
 {
     public class PaymentController : Controller
     {
-        PaymentRepository paymentRepository;
-        public PaymentController()
+        IPaymentRepository paymentRepository;
+        public PaymentController(IPaymentRepository paymentRepository)
         {
-            paymentRepository = new PaymentRepository();
+            this.paymentRepository = paymentRepository;
         }
         public IActionResult Index()
         {

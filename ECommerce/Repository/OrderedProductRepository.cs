@@ -6,13 +6,9 @@ namespace Ecommerce.Repository
 {
     public class OrderedProductRepository
     {
-        private readonly ECommerceEntity Db;
+        ECommerceEntity Db;
 
-        public OrderedProductRepository()
-        {
-
-        }
-
+      
         public OrderedProductRepository(ECommerceEntity _Db)
         {
             Db = _Db;

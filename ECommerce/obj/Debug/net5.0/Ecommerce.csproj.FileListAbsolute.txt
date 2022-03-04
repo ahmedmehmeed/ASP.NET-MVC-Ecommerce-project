@@ -1731,3 +1731,6 @@ D:\Project\Ecommerce\obj\Debug\net5.0\Ecommerce.genruntimeconfig.cache
 D:\Project\Ecommerce\obj\Debug\net5.0\ref\Ecommerce.dll
 D:\Project\Ecommerce\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 D:\Project\Ecommerce\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Category\Add.cshtml.g.cs
+E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs

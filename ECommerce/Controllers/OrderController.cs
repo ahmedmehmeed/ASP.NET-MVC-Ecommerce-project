@@ -7,10 +7,10 @@ namespace Ecommerce.Controllers
 {
     public class OrderController : Controller
     {
-        OrderRepository orderRepository;
-        public OrderController()
+        IOrderRepository orderRepository;
+        public OrderController(IOrderRepository orderRepository)
         {
-            orderRepository = new OrderRepository();
+            this.orderRepository = orderRepository;
         }
         public IActionResult Index()
         {

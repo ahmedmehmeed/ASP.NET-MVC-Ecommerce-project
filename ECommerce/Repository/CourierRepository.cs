@@ -6,12 +6,7 @@ namespace Ecommerce.Repository
 {
     public class CourierRepository : ICourierRepository
     {
-        private readonly ECommerceEntity Db;
-
-        public CourierRepository()
-        {
-
-        }
+        ECommerceEntity Db;
 
         public CourierRepository(ECommerceEntity _Db)
         {
