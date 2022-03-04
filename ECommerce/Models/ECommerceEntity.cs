@@ -63,10 +63,13 @@ namespace Ecommerce.Models
             modelBuilder.Entity<OrderedProduct>().HasKey(table => new {
                 table.OrderId,
                 table.ProductId,
-            
+                
+
+                });
+            modelBuilder.Entity<ProductCart>().HasKey(table => new {
+                table.CartId,
+                table.ProductId,
             });
-
-
         }
 
     }
