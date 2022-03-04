@@ -32,7 +32,7 @@ namespace Ecommerce.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //don't forget to change!!
-            optionsBuilder.UseSqlServer("Data Source=LAPTOP-RTRM9B61\\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-2S4PV11\\SQLEXPRESS;Initial Catalog=ECommerceDB2;Integrated Security=True");
             optionsBuilder.UseLazyLoadingProxies();
         }
 
@@ -69,10 +69,7 @@ namespace Ecommerce.Models
                 
 
                 });
-            modelBuilder.Entity<CheckOutViewModel>().HasKey(table => new
-            {
-                table.UserName
-            });
+
             modelBuilder.Entity<ProductCart>().HasKey(table => new {
                 table.CartId,
                 table.ProductId,

@@ -17,6 +17,8 @@ namespace Ecommerce.Models
         public int CustomerId { get; set; }
         public DateTime DateCreated { get; set; }
         public int Count { get; set; }
+        public decimal price { get; set; }
+        public decimal total { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual ICollection<ProductCart> ProductCarts { get; set; }
 

@@ -1744,3 +1744,6 @@ E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Checkout\Details.cshtm
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Category\Add.cshtml.g.cs
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Checkout\Add.cshtml.g.cs
+E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Cart\Index.cshtml.g.cs
+E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Cart\Details.cshtml.g.cs
+E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Cart\Add.cshtml.g.cs
