@@ -21,6 +21,8 @@ namespace Ecommerce.Models
         public DbSet<Courier> couriers { get; set; }
         public DbSet<Courier> Courses { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<CheckOutViewModel> checkOuts { get; set; }
+
         public DbSet<Order> Orders { get; set; }
         public DbSet<Payment> payments { get; set; }
         public DbSet<Cart> Carts { get; set; }
@@ -67,6 +69,10 @@ namespace Ecommerce.Models
                 
 
                 });
+            modelBuilder.Entity<CheckOutViewModel>().HasKey(table => new
+            {
+                table.UserName
+            });
             modelBuilder.Entity<ProductCart>().HasKey(table => new {
                 table.CartId,
                 table.ProductId,
