@@ -15,9 +15,10 @@
       <th scope="col">Name</th>
       <th scope="col">Description</th>
       <th scope="col">Price</th>
-     @* <th scope="col">Image</th>*@
+      <th scope="col">Image</th>
       <th scope="col">Date</th>
       <th scope="col">Category</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -28,7 +29,7 @@
       <td>@item.Name</td>
       <td>@item.Description</td>
       <td>@item.Price</td>
-  @* <td><img   src=""/></td>@item.Image*@
+    <td><img  src = "/images/@item.Image " class="w-100" style="width:50px;height:50px"/></td>
       <td>@item.Date</td>
      <td>@item.Category.Name</td>
       <td>

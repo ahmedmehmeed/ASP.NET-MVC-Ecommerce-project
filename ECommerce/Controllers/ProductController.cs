@@ -30,12 +30,15 @@ namespace Ecommerce.Controllers
             return View(productsModel);
 
         }
-
+          
+        //don't have view
         public IActionResult Details(int id)
         {
             Product product = productRepository.GetById(id);
             return View(product);
         }
+
+
         [HttpGet]
         public IActionResult Add()
         {
@@ -75,11 +78,22 @@ namespace Ecommerce.Controllers
 
 
 
-
+        [HttpGet]
         public IActionResult Edit(int id)
         {
+            ProductViewModel productViewModel = new ProductViewModel();
+
+            var allcategs = categoryRepository.Getall();
+            
             Product product = productRepository.GetById(id);
-            return View(product);
+            productViewModel.Name = product.Name;   
+            productViewModel.Description = product.Description;
+            productViewModel.Price = (int)product.Price;
+            productViewModel.image = product.Image;
+            productViewModel.CategoryId = product.CategoryId;
+            productViewModel.Category = allcategs;
+           
+            return View(productViewModel);
         }
 
 
@@ -87,15 +101,27 @@ namespace Ecommerce.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult SaveEdit(int id, ProductViewModel Newproduct)
+        public async Task<IActionResult> EditAsync(int id, ProductViewModel NewProduct)
         {
-            if (ModelState.IsValid == true)
+            if (ModelState.IsValid)
             {
-                productRepository.Update(id, Newproduct);
+                string wwwRootPath = _hostEnvironment.WebRootPath;
+                string fileName = Path.GetFileNameWithoutExtension(NewProduct.Image.FileName);
+                string extension = Path.GetExtension(NewProduct.Image.FileName);
+                NewProduct.image = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                string path = Path.Combine(wwwRootPath + "/Images/", fileName);
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    await NewProduct.Image.CopyToAsync(fileStream);
+                }
+
+
+
+                productRepository.Update(id, NewProduct);
                 return RedirectToAction("Index");
             }
             else
-                return View("Edit", Newproduct);
+                return View("Edit", NewProduct);
         }
 
         public IActionResult Delete(int id)

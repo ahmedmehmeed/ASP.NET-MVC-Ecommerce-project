@@ -5,10 +5,11 @@
     "\\ECommerce\\Controllers",
     "\\ECommerce\\Models",
     "\\ECommerce\\Repository",
+    "\\ECommerce\\View Models",
     "\\ECommerce\\Views",
     "\\ECommerce\\Views\\Account",
     "\\ECommerce\\Views\\Cart"
   ],
-  "SelectedNode": "\\ECommerce\\Views\\Cart\\Delete.cshtml",
+  "SelectedNode": "\\ECommerce\\Controllers\\CategoryController.cs",
   "PreviewInSolutionExplorer": false
 }
