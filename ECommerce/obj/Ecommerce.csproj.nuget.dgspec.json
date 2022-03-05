@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\Ecommerce\\Ecommerce.csproj": {}
+    "E:\\PROJECT\\MVC\\Ecommerce\\Ecommerce.csproj": {}
   },
   "projects": {
-    "D:\\Project\\Ecommerce\\Ecommerce.csproj": {
+    "E:\\PROJECT\\MVC\\Ecommerce\\Ecommerce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\Ecommerce\\Ecommerce.csproj",
+        "projectUniqueName": "E:\\PROJECT\\MVC\\Ecommerce\\Ecommerce.csproj",
         "projectName": "Ecommerce",
-        "projectPath": "D:\\Project\\Ecommerce\\Ecommerce.csproj",
-        "packagesPath": "C:\\Users\\FreeComp\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\Ecommerce\\obj\\",
+        "projectPath": "E:\\PROJECT\\MVC\\Ecommerce\\Ecommerce.csproj",
+        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
+        "outputPath": "E:\\PROJECT\\MVC\\Ecommerce\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\FreeComp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

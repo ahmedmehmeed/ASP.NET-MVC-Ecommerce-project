@@ -19,6 +19,7 @@ namespace Ecommerce.Controllers
             List<Category> categories = categoryRepository.Getall();
             return View(categories);
         }
+       
         public IActionResult Details(int id)
         {
             Category category = categoryRepository.GetById(id);
