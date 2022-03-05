@@ -53,7 +53,8 @@ namespace Ecommerce.Controllers
                     customer.CustomerId=user.Id;
                     ECommerceEntity.Customers.Add(customer);
                     ECommerceEntity.SaveChanges();
-
+                    //add user to role
+                   await userManager.AddToRoleAsync(IdentityUser, "Customer");
 
                     //save success cookie to save login in client
                     await signInManager.SignInAsync(IdentityUser, false);

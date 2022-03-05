@@ -1,23 +1,62 @@
-﻿@model List<Category>
+﻿@*@model List<Category>
 
 <table class = "table table-hover table-bordered ">
-    <tr>
+    <tr class="text-center">
         <th>id</th>
         <th>name</th>
 
     </tr>
     @foreach(var i in Model)
     {
-        <tr>
+        <tr class="text-center">
             <td>@i.Id</td>
             <td>@i.Name</td>
 
-            <td><a asp-action="Edit" asp-controller="Category" asp-route-id = "@i.Id">Edit Category</a></td>
-            <td><a asp-action="Delete" asp-controller="Category" asp-route-id = "@i.Id" onclick="ConfirmDelete()">Delete</a></td>
+            <td><a asp-action="Edit" class="btn btn-outline-primary"  asp-controller="Category" asp-route-id = "@i.Id">Edit Category</a></td>
+            <td><a asp-action="Delete" class="btn btn-outline-danger" asp-controller="Category" asp-route-id = "@i.Id" onclick="ConfirmDelete()">Delete</a></td>
         </tr>
     }
 </table>
+<div class="text-center">
 <a  asp-action="Add" asp-controller="Category"  class="btn btn-primary">Add New</a>
+
+</div>*@
+
+@model List<Category>
+<table class="table table-striped mt-4 box-shadow table-responsive-md " >
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+     
+   @foreach (var item in Model)
+  {
+       <tr>
+      <td scope="row">@item.Id</td>
+      <td>@item.Name</td>
+      <td class="text-right">
+          <a asp-action="Edit" class="btn btn-outline-primary TEXT-right"  asp-controller="Category" asp-route-id = "@item.Id">Edit Category</a>
+         <a asp-action="Delete" class="btn btn-outline-danger " asp-controller="Category" asp-route-id = "@item.Id" onclick="ConfirmDelete()">Delete</a>
+      </td>
+     
+    </tr>
+
+  }
+
+
+
+  </tbody>
+</table>
+<div class="row d-flex flexflex-column align-items-center">
+    
+  <a asp-action="Add" asp-controller="Category"  class="btn btn-outline-success rounded col-2 text-large mx-auto ">Add New Category</a>
+
+
+</div>
  
 <script>
     function ConfirmDelete(){
