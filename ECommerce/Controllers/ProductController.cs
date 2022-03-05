@@ -4,20 +4,31 @@ using Ecommerce.View_Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+using System.IO;
+using System;
+using System.Threading.Tasks;
 
 namespace Ecommerce.Controllers
 {
     public class ProductController : Controller
     {
-        IProductRepository productRepository;
-        public ProductController(IProductRepository productRepository)
+        private readonly IProductRepository productRepository;
+        private readonly ICategoryRepository categoryRepository;
+        private readonly IWebHostEnvironment _hostEnvironment;
+
+        public ProductController(IProductRepository productRepository,ICategoryRepository categoryRepository,IWebHostEnvironment hostEnvironment)
         {
             this.productRepository = productRepository;
+            this.categoryRepository = categoryRepository;
+            this._hostEnvironment = hostEnvironment;
         }
         public IActionResult Index()
         {
             List<Product> productsModel = productRepository.Getall();
             return View(productsModel);
+
         }
 
         public IActionResult Details(int id)
@@ -25,15 +36,33 @@ namespace Ecommerce.Controllers
             Product product = productRepository.GetById(id);
             return View(product);
         }
-
+        [HttpGet]
         public IActionResult Add()
         {
-            return View(new ProductViewModel());
+           ProductViewModel productViewModel = new ProductViewModel();  
+         var allcategs = categoryRepository.Getall();
+            productViewModel.Category = allcategs;
+
+            return View(productViewModel);
         }
-        public IActionResult SaveAdd(ProductViewModel NewProduct)
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddAsync(ProductViewModel NewProduct)
         {
             if (ModelState.IsValid)
             {
+
+                string wwwRootPath = _hostEnvironment.WebRootPath;
+                string fileName = Path.GetFileNameWithoutExtension(NewProduct.Image.FileName);
+                string extension = Path.GetExtension(NewProduct.Image.FileName);
+                NewProduct.image = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                string path = Path.Combine(wwwRootPath + "/Images/", fileName);
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    await NewProduct.Image.CopyToAsync(fileStream);
+                }
 
                 productRepository.Insert(NewProduct);
                 return RedirectToAction("Index");
@@ -42,11 +71,20 @@ namespace Ecommerce.Controllers
                 return View("Add", NewProduct);
         }
 
+
+
+
+
+
         public IActionResult Edit(int id)
         {
             Product product = productRepository.GetById(id);
             return View(product);
         }
+
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult SaveEdit(int id, ProductViewModel Newproduct)

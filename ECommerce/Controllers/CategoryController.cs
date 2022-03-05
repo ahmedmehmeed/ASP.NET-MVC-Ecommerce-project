@@ -29,6 +29,8 @@ namespace Ecommerce.Controllers
 
             return View(new Category());
         }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public  IActionResult SaveAdd(Category NewCetgory)
