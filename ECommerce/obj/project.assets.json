@@ -9219,34 +9219,19 @@
     ]
   },
   "packageFolders": {
-<<<<<<< Updated upstream
-    "C:\\Users\\FreeComp\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\Hend\\.nuget\\packages\\": {}
->>>>>>> Stashed changes
+    "C:\\Users\\asus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< Updated upstream
-      "projectUniqueName": "D:\\Project\\Ecommerce\\Ecommerce.csproj",
+      "projectUniqueName": "E:\\PROJECT\\MVC\\Ecommerce\\Ecommerce.csproj",
       "projectName": "Ecommerce",
-      "projectPath": "D:\\Project\\Ecommerce\\Ecommerce.csproj",
-      "packagesPath": "C:\\Users\\FreeComp\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\Ecommerce\\obj\\",
+      "projectPath": "E:\\PROJECT\\MVC\\Ecommerce\\Ecommerce.csproj",
+      "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
+      "outputPath": "E:\\PROJECT\\MVC\\Ecommerce\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\FreeComp\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\Users\\Hend\\Documents\\GitHub\\MVC\\Ecommerce\\Ecommerce.csproj",
-      "projectName": "Ecommerce",
-      "projectPath": "C:\\Users\\Hend\\Documents\\GitHub\\MVC\\Ecommerce\\Ecommerce.csproj",
-      "packagesPath": "C:\\Users\\Hend\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hend\\Documents\\GitHub\\MVC\\Ecommerce\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\Hend\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> Stashed changes
+        "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9313,12 +9298,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.12, 5.0.12]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -9327,7 +9306,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
