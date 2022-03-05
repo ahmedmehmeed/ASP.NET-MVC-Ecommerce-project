@@ -42,7 +42,7 @@ namespace Ecommerce
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 
-
+            services.AddSession(s => { s.IdleTimeout = TimeSpan.FromMinutes(30); }); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,7 +61,7 @@ namespace Ecommerce
             app.UseRouting();
             app.UseAuthentication();    //check cookies  found or not
             app.UseAuthorization();     // check role
-
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
