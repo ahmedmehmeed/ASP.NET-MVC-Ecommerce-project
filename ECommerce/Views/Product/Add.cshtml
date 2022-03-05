@@ -1,0 +1,59 @@
+﻿@using Ecommerce.View_Models
+@model ProductViewModel
+@{
+    var ProductViewModel=  Model.Category;
+    SelectList sel = new SelectList(ProductViewModel, "Id", "Name");
+
+}
+
+
+<form asp-action="Add" asp-controller="Product" method="post" enctype="multipart/form-data"  class="d-flex flex-column mx-auto w-50 bg-transparent shadow-sm" >
+    <div asp-validation-summary="All" class="text-danger">
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger" ></span>
+    </div>
+      <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger" ></span>
+    </div>
+
+
+        <div class="form-group">
+        <label asp-for="Image"></label>
+        <input type="file" asp-for="Image" accept="image/*"  class="form-control" />
+         <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+         <span asp-validation-for="Price" class="text-danger"></span>  
+    </div>
+   
+
+
+    
+
+    <div class="form-group">
+  <label asp-for="CategoryId" >Department</label>
+  <select asp-for="CategoryId" asp-items="sel" class="form-control">
+
+  </select>
+    </div>
+    
+    
+  
+
+  <div class="form-group">
+    <input type="submit" value="add" class="btn-outline-success form-control"  />
+   </div>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

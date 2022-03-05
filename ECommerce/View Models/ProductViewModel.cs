@@ -15,11 +15,12 @@ namespace Ecommerce.View_Models
         [Required(ErrorMessage = "You must Enter Price")]
 
         public int Price { get; set; }
-        public int OldPrice { get; set; }
-        [Required(ErrorMessage = "You must Upload Image")]
 
-        public string Image { get; set; }
-        public IFormFile ImageFile { get; set; }
+        public string image { get; set; }
+
+        [Required(ErrorMessage = "You must Upload Image")] 
+
+        public IFormFile Image { get; set; }
         public int CategoryId { get; set; }
         public List<Category> Category { get; set; }
 

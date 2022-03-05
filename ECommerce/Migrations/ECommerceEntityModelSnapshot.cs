@@ -56,6 +56,12 @@ namespace Ecommerce.Migrations
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
+                    b.Property<decimal>("price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("total")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
@@ -71,6 +77,7 @@ namespace Ecommerce.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -202,7 +209,7 @@ namespace Ecommerce.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AdminId")
+                    b.Property<int?>("AdminId")
                         .HasColumnType("int");
 
                     b.Property<int>("CategoryId")
@@ -270,6 +277,36 @@ namespace Ecommerce.Migrations
                     b.ToTable("ProductInfos");
                 });
 
+            modelBuilder.Entity("Ecommerce.View_Models.CheckOutViewModel", b =>
+                {
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Adress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserName");
+
+                    b.ToTable("checkOuts");
+                });
+
             modelBuilder.Entity("Ecommerce.View_Models.LoginViewModel", b =>
                 {
                     b.Property<string>("username")
@@ -285,6 +322,16 @@ namespace Ecommerce.Migrations
                     b.HasKey("username");
 
                     b.ToTable("LoginViewModel");
+                });
+
+            modelBuilder.Entity("Ecommerce.View_Models.RoleViewModel", b =>
+                {
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Role");
+
+                    b.ToTable("RoleViewModel");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -565,19 +612,16 @@ namespace Ecommerce.Migrations
 
             modelBuilder.Entity("Ecommerce.Models.Product", b =>
                 {
-                    b.HasOne("Ecommerce.Models.Admin", "Admin")
+                    b.HasOne("Ecommerce.Models.Admin", null)
                         .WithMany("Products")
                         .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Ecommerce.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.Navigation("Admin");
 
                     b.Navigation("Category");
                 });

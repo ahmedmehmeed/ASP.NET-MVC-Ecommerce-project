@@ -12,7 +12,7 @@ namespace Ecommerce.Repository
         ECommerceEntity Db;
         public ProductRepository(ECommerceEntity _Db)
         {
-            _Db = Db;
+            Db = _Db;
         }
 
         public List<Product> Getall()
@@ -46,7 +46,9 @@ namespace Ecommerce.Repository
             Product.Price = productViewModel.Price;
             Product.CategoryId = productViewModel.CategoryId;
             Product.Description = productViewModel.Description;
-            Product.Image = productViewModel.Image;
+            Product.Image = productViewModel.image;
+            Product.Date = DateTime.Now.ToString("dd-MM-yyyy");
+
 
 
             Db.Products.Add(Product);
@@ -62,7 +64,7 @@ namespace Ecommerce.Repository
             oldproduct.CategoryId = productViewModel.CategoryId;
             oldproduct.Description = productViewModel.Description;
             oldproduct.Date = DateTime.Now.ToString("dd-MM-yyyy");
-            oldproduct.Image = productViewModel.Image;
+            oldproduct.Image = productViewModel.image;
 
             Db.SaveChanges();
 

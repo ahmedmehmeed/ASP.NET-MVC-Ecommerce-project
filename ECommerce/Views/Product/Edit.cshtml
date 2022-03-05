@@ -1,0 +1,60 @@
+﻿@using Ecommerce.View_Models
+@model ProductViewModel
+
+
+<form asp-action="Edit" asp-controller="Product" method="post" enctype="multipart/form-data"  class="d-flex flex-column mx-auto w-50 bg-transparent shadow-sm" >
+    <div asp-validation-summary="All" class="text-danger">
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" value="@Model.Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger" ></span>
+    </div>
+      <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" value="@Model.Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger" ></span>
+    </div>
+
+
+        <div class="form-group">
+        <label asp-for="Image"></label>
+        <input type="file" asp-for="Image" value="@Model.image" accept="image/*"  class="form-control" />
+         <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" value="@Model.Price" class="form-control" />
+         <span asp-validation-for="Price" class="text-danger"></span>  
+    </div>
+   
+        <div class="form-group">
+      <select asp-for="CategoryId"   class="form-control">
+          @foreach (var item in @Model.Category)
+         {
+                if (@Model.CategoryId == @item.Id)
+                {
+                    <option selected value="@item.Id">@item.Name</option>
+                }
+                else
+                {
+                 <option value="@item.Id">@item.Name</option>
+
+                    
+                }
+
+         }
+      </select>
+  </div>
+
+
+  <div class="form-group">
+    <input type="submit" value="add" class="btn-outline-success form-control"  />
+   </div>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
