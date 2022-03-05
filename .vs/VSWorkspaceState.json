@@ -1,10 +1,22 @@
 {
   "ExpandedNodes": [
     "",
+    "\\ECommerce",
     "\\ECommerce\\Controllers",
+    "\\ECommerce\\Models",
+    "\\ECommerce\\Repository",
+    "\\ECommerce\\View Models",
+    "\\ECommerce\\Views",
+<<<<<<< Updated upstream
     "\\ECommerce\\Views\\Account",
     "\\ECommerce\\Views\\Cart"
   ],
+  "SelectedNode": "\\ECommerce\\Controllers\\CategoryController.cs",
+=======
+    "\\ECommerce\\Views\\Home",
+    "\\ECommerce\\Views\\Shared"
+  ],
   "SelectedNode": "\\Ecommerce.sln",
+>>>>>>> Stashed changes
   "PreviewInSolutionExplorer": false
 }
