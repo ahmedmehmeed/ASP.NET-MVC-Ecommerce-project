@@ -80,10 +80,46 @@
         <span class="visually-hidden" ></span>
       </button>
     </div>
-</div>
+</header>
+
+@model List<Category>
+
+<h2 style="color:rgb(78 115 223);">Select Category</h2>
+<br />
+
+<select id="categories" class ="form-control" onchange="getAll()" >
+    @foreach (var item in Model)
+   {
+        <option value="@item.Id">@item.Name</option>       
+   }
+</select>
+
+
+
+<div id = "Products"></div>
+<script>
+    
+    function getAll(){
+        var id=$("#categories").val();
+        
+        $.ajax(
+            {
+                url: `/Home/Products?CatId=${id}`,
+                
+                success: function(result){
+                    
+                    $("#Products").html(result);
+                }
+            }
+         );
+    }
+</script>
+
+
+
 
 <!--end carusel-->
-        </header>
+        
   
     <!-- Navigation -->  
     @*<nav class="navbar navbar-default navbar-fixed-top">  

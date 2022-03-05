@@ -14,18 +14,13 @@ namespace Ecommerce.Controllers
 {
     public class ProductController : Controller
     {
-<<<<<<< Updated upstream
+
         private readonly IProductRepository productRepository;
         private readonly ICategoryRepository categoryRepository;
         private readonly IWebHostEnvironment _hostEnvironment;
 
         public ProductController(IProductRepository productRepository,ICategoryRepository categoryRepository,IWebHostEnvironment hostEnvironment)
-=======
 
-
-        IProductRepository productRepository;
-        public ProductController(IProductRepository productRepository)
->>>>>>> Stashed changes
         {
             this.productRepository = productRepository;
             this.categoryRepository = categoryRepository;

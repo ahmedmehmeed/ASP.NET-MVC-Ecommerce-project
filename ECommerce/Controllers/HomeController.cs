@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Ecommerce.Repository;
+
 
 namespace Ecommerce.Controllers
 {
@@ -14,15 +16,24 @@ namespace Ecommerce.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-
-        public HomeController(ILogger<HomeController> logger)
+        ECommerceEntity entity;
+        ICategoryRepository categoryRepository;
+        public HomeController(ILogger<HomeController> logger, ICategoryRepository categoryRepository)
         {
             _logger = logger;
+            this.categoryRepository = categoryRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            List<Category> catModel = categoryRepository.Getall();
+            return View(catModel);
+            
+        }
+        public IActionResult Products(int CatId)
+        {
+            List<Product> products = entity.Products.Where(n => n.CategoryId == CatId).ToList();
+            return PartialView("_Products", products);
         }
 
         public IActionResult Privacy()
@@ -33,6 +44,9 @@ namespace Ecommerce.Controllers
         {
             return View();
         }
+        
+
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

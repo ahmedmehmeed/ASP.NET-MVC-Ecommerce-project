@@ -1791,3 +1791,4 @@ E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Home\About.cshtml.g.cs
 E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Product\Add.cshtml.g.cs
 E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Product\Edit.cshtml.g.cs
 E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
+E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Product\product.cshtml.g.cs
