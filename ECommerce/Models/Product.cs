@@ -34,13 +34,15 @@ namespace Ecommerce.Models
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
 
-        //Replace with user
-        [ForeignKey("Admin")]
-        public int AdminId { get; set; }
-        
-        public virtual Admin Admin { get; set; }
+        //one one only
+      //  [ForeignKey("Admin")]
+       // public int AdminId { get; set; }
+
+
+        //  public virtual Admin Admin { get; set; }
+       public virtual Category Category { get; set; }
         public virtual ICollection<OrderedProduct> OrderedProducts { get; set; }
-        public virtual Category Category { get; set; }
+      
         public virtual ICollection<ProductInfo> ProductInfo { get; set; }
         public virtual ICollection<ProductCart> ProductCarts { get; set; }
 

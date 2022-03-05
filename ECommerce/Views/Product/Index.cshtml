@@ -1,0 +1,54 @@
+﻿ 
+ @model List<Product>
+ <div class="row d-flex flexflex-column align-items-center">
+    
+  <a asp-action="Add" asp-controller="Product"  class="btn btn-outline-success rounded col-2 text-large mx-auto ">Add New Product</a>
+
+
+</div>
+
+
+<table class="table table-striped mt-4 box-shadow table-responsive-md " style="height:500px">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col">Image</th>
+      <th scope="col">Date</th>
+      <th scope="col">Category</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+   @foreach (var item in Model)
+  {
+       <tr>
+      <th scope="row">@item.Id</th>
+      <td>@item.Name</td>
+      <td>@item.Description</td>
+      <td>@item.Price</td>
+    <td><img  src = "/images/@item.Image " class="w-100" style="width:50px;height:50px"/></td>
+      <td>@item.Date</td>
+     <td>@item.Category.Name</td>
+      <td>
+ @*    // should be anchor not button to use asp-action &Aacute; asp-controller*@
+        <a type="button" class="btn-outline-warning  rounded mx-1 p-1" asp-action="Edit" asp-controller="Product" asp-route-id="@item.Id" >Edit</a>
+         <a type="button" class="btn-outline-danger rounded p-1" asp-action="Delete" asp-controller="Product" asp-route-id="@item.Id">Delete</a>
+       
+       </td>
+    </tr>
+
+  }
+
+
+
+  </tbody>
+</table>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
