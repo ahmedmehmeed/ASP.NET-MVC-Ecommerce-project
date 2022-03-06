@@ -1,4 +1,4 @@
-﻿@model Ecommerce.Models.Product
+﻿@model Product
 
 @{
     ViewData["Title"] = "Details";
@@ -9,7 +9,22 @@
 <div>
     <h4>Product</h4>
     <hr />
-    <dl class="row">
+    <div class="card" style="width: 18rem;">
+         <img src="/Images/@Model.Image" class = "card-img-top" alt="...">
+           <div class="card-body">
+    <h4 class="card-title"> Name :@Model.Name</h4>
+    
+
+    <p class="card-title"> Description: @Model.Description</p>
+    <p class="card-title">Price @Model.Price</p>
+
+
+ 
+  </div>
+  </div>
+
+</div>
+   @* <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -47,7 +62,7 @@
             @Html.DisplayFor(model => model.Category.Name)
         </dd>
     </dl>
-</div>
+</div>*@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>

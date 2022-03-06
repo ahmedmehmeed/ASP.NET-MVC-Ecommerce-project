@@ -8,14 +8,12 @@ namespace Ecommerce.Controllers
 {
     public class CustomerProductController : Controller
     {
-        private readonly IProductRepository productRepository;
-        private readonly ICategoryRepository categoryRepository;
+        IProductRepository productRepository;
 
-        public CustomerProductController(IProductRepository productRepository, ICategoryRepository categoryRepository)
+        public CustomerProductController(IProductRepository productRepository)
 
         {
             this.productRepository = productRepository;
-            this.categoryRepository = categoryRepository;
         }
         public IActionResult Index()
         {
