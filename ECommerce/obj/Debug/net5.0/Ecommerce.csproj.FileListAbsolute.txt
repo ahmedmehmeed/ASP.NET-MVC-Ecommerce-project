@@ -1294,8 +1294,6 @@ E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Ecommerce.dll
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\ref\Ecommerce.dll
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Ecommerce.pdb
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Ecommerce.genruntimeconfig.cache
-E:\PROJECT\MVC\Ecommerce\bin\Debug\net5.0\Castle.Core.dll
-E:\PROJECT\MVC\Ecommerce\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
 D:\Project\Ecommerce\bin\Debug\net5.0\appsettings.Development.json
 D:\Project\Ecommerce\bin\Debug\net5.0\appsettings.json
 D:\Project\Ecommerce\bin\Debug\net5.0\Ecommerce.exe

@@ -1,4 +1,4 @@
-﻿using Castle.Components.DictionaryAdapter;
+﻿
 using System.ComponentModel.DataAnnotations;
 
 namespace Ecommerce.View_Models
