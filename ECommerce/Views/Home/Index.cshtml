@@ -94,17 +94,15 @@
    }
 </select>
 
-
-
 <div id = "Products"></div>
 <script>
     
     function getAll(){
-        var id=$("#categories").val();
+        var Id=$("#categories").val();
         
         $.ajax(
             {
-                url: `/Home/Products?CatId=${id}`,
+                url: `/Home/Products?CatId=${Id}`,
                 
                 success: function(result){
                     

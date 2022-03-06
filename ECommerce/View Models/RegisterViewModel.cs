@@ -1,4 +1,4 @@
-﻿using Castle.Components.DictionaryAdapter;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 

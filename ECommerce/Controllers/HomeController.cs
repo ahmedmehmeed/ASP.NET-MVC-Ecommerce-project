@@ -22,6 +22,7 @@ namespace Ecommerce.Controllers
         {
             _logger = logger;
             this.categoryRepository = categoryRepository;
+            entity = new ECommerceEntity();
         }
 
         public IActionResult Index()
@@ -34,6 +35,7 @@ namespace Ecommerce.Controllers
         {
             List<Product> products = entity.Products.Where(n => n.CategoryId == CatId).ToList();
             return PartialView("_Products", products);
+            
         }
 
         public IActionResult Privacy()
