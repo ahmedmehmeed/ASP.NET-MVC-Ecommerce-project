@@ -53,7 +53,7 @@ namespace Ecommerce.Repository
         {
             Order order = Db.Orders.FirstOrDefault(e => e.Id == id);
             order.Date = Neworder.Date;
-            order.CourierId = Neworder.CourierId;
+           
             order.CustomerId = Neworder.CustomerId;
 
             Db.SaveChanges();

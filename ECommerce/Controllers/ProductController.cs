@@ -14,13 +14,11 @@ namespace Ecommerce.Controllers
 {
     public class ProductController : Controller
     {
-
         private readonly IProductRepository productRepository;
         private readonly ICategoryRepository categoryRepository;
         private readonly IWebHostEnvironment _hostEnvironment;
 
         public ProductController(IProductRepository productRepository,ICategoryRepository categoryRepository,IWebHostEnvironment hostEnvironment)
-
         {
             this.productRepository = productRepository;
             this.categoryRepository = categoryRepository;

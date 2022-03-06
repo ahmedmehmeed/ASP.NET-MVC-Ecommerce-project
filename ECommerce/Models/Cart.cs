@@ -8,10 +8,7 @@ namespace Ecommerce.Models
 {
     public class Cart
     {
-        public Cart()
-        {
-            ProductCarts = new HashSet<ProductCart>();
-        }
+      
         public int Id { get; set; }
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }
@@ -20,8 +17,6 @@ namespace Ecommerce.Models
         public decimal price { get; set; }
         public decimal total { get; set; }
         public virtual Customer Customer { get; set; }
-        public virtual ICollection<ProductCart> ProductCarts { get; set; }
 
-
-    }
+       }
 }

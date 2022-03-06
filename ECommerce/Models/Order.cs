@@ -15,15 +15,13 @@ namespace Ecommerce.Models
         [Required]
         public string Date { get; set; }
         
-        [ForeignKey("Courier")]
-        public int CourierId { get; set; }
-
+     
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }
 
         public virtual Customer Customer { get; set; }
         public virtual ICollection<OrderedProduct> OrderedProducts { get; set; }
-        public virtual Courier Courier { get; set; }
+       
     
 }
 }

@@ -4,13 +4,11 @@ using Ecommerce.Models;
 using Ecommerce.View_Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace Ecommerce.Controllers
 {
     public class CategoryController : Controller
     {
-        
         ICategoryRepository categoryRepository;
         public CategoryController(ICategoryRepository categoryRepository)
         {
@@ -74,8 +72,6 @@ namespace Ecommerce.Controllers
             categoryRepository.Delete(id);
             return RedirectToAction("Index");
         }
-
-        
     }
 }
 

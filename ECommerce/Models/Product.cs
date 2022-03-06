@@ -4,15 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ecommerce.Models
 {
-   // [MetadataType(typeof(ProductMetaData))]
-
     public class Product
     {
         public Product()
         {
-            ProductInfo = new HashSet<ProductInfo>();
+
             OrderedProducts = new HashSet<OrderedProduct>();
-            ProductCarts = new HashSet<ProductCart>();
+            Customers = new HashSet<Customer>();
+
         }
         public int Id { get; set; }
 
@@ -34,13 +33,10 @@ namespace Ecommerce.Models
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
 
-      
+
         public virtual Category Category { get; set; }
         public virtual ICollection<OrderedProduct> OrderedProducts { get; set; }
-      
-        public virtual ICollection<ProductInfo> ProductInfo { get; set; }
-        public virtual ICollection<ProductCart> ProductCarts { get; set; }
-
+        public virtual ICollection<Customer> Customers { get; set; }
 
     }
 }

@@ -18,22 +18,20 @@ namespace Ecommerce.Models
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Courier> couriers { get; set; }
-        public DbSet<Courier> Courses { get; set; }
+
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<CheckOutViewModel> checkOuts { get; set; }
+     
 
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Payment> payments { get; set; }
         public DbSet<Cart> Carts { get; set; }
-        public DbSet<ProductInfo> ProductInfos { get; set; }
+
         public DbSet<OrderedProduct> OrderedProducts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //don't forget to change!!
-            optionsBuilder.UseSqlServer("Data Source=LAPTOP-RTRM9B61\\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True");
-            
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-JKQGKJ0\\SQLEXPRESS;Initial Catalog=ECommerceDB;Integrated Security=True");
+            optionsBuilder.UseLazyLoadingProxies();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -52,14 +50,7 @@ namespace Ecommerce.Models
 
 
             base.OnModelCreating(modelBuilder);
-            // make three prop as primary key
-            modelBuilder.Entity<ProductInfo>().HasKey(table => new {
-                table.Prod_ID,
-                table.Color,
-                table.Image,
-                table.Size
-
-            });
+    
 
 
 
@@ -70,11 +61,7 @@ namespace Ecommerce.Models
 
                 });
 
-            modelBuilder.Entity<ProductCart>().HasKey(table => new {
-                table.CartId,
-                table.ProductId,
-            });
-
+          
 
 
 
