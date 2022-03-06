@@ -1729,8 +1729,6 @@ D:\Project\Ecommerce\obj\Debug\net5.0\Ecommerce.genruntimeconfig.cache
 D:\Project\Ecommerce\obj\Debug\net5.0\ref\Ecommerce.dll
 D:\Project\Ecommerce\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 D:\Project\Ecommerce\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
-E:\Mvc project\MVC\Ecommerce\bin\Debug\net5.0\Castle.Core.dll
-E:\Mvc project\MVC\Ecommerce\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Order\Index.cshtml.g.cs
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Order\Details.cshtml.g.cs
