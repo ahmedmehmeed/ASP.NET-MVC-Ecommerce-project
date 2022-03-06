@@ -31,7 +31,7 @@ namespace Ecommerce.Repository
 
         public List<Product> GetLastSeven()
         {
-            List<Product> product = Db.Products.Include(e => e.ProductInfo).OrderByDescending(e => e.Date).Take(7).ToList();
+            List<Product> product = Db.Products.OrderByDescending(e => e.Date).Take(7).ToList();
             return product;
 
         }

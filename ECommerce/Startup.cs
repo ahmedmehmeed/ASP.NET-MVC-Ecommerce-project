@@ -34,10 +34,9 @@ namespace Ecommerce
             services.AddIdentity<IdentityUser, IdentityRole>()
                 
                 .AddEntityFrameworkStores<ECommerceEntity>();
-            services.AddScoped<IPaymentRepository,PaymentRepository>();
-            services.AddScoped<ICourierRepository, CourierRepository>();
+           
             services.AddScoped<IOrderRepository, OrderRepository>();
-            services.AddScoped<IProductInfoRepository, ProductInfoRepository>();
+        
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 

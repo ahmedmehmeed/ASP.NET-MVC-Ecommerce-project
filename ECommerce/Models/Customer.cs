@@ -10,7 +10,8 @@ namespace Ecommerce.Models
         public Customer()
         {
             Orders = new HashSet<Order>();
-            Payments = new HashSet<Payment>();
+            ProductsCart = new HashSet<Product>();
+           
 
         }
         [Key]
@@ -26,7 +27,8 @@ namespace Ecommerce.Models
         public string LName { get; set; }
         public virtual IdentityUser IdentityUser { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
-        public virtual ICollection<Payment> Payments { get; set; }
+        public virtual ICollection<Product> ProductsCart { get; set; }
+      
 
 
     }
