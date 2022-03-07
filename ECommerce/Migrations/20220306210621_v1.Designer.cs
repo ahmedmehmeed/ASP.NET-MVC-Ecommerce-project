@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.Migrations
 {
     [DbContext(typeof(ECommerceEntity))]
-    [Migration("20220306185336_v1")]
+    [Migration("20220306210621_v1")]
     partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -200,7 +200,7 @@ namespace Ecommerce.Migrations
 
                     b.HasKey("Id");
 
-                 
+                    b.HasIndex("AdminId");
 
                     b.HasIndex("CategoryId");
 

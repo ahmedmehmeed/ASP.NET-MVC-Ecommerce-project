@@ -198,7 +198,7 @@ namespace Ecommerce.Migrations
 
                     b.HasKey("Id");
 
-                
+                    b.HasIndex("AdminId");
 
                     b.HasIndex("CategoryId");
 

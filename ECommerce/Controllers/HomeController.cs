@@ -1,4 +1,5 @@
 ﻿using Ecommerce.Models;
+using Ecommerce.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,17 +13,34 @@ namespace Ecommerce.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        ICategoryRepository categoryRepository;
+        ECommerceEntity context;
+        public HomeController(ILogger<HomeController> logger,ICategoryRepository categoryRepository  )
         {
             _logger = logger;
+            this.categoryRepository = categoryRepository;
+            context= new ECommerceEntity();
         }
 
         public IActionResult Index()
         {
-            return View();
+            List<Category> categories = categoryRepository.Getall();
+            return View(categories);
         }
 
+        
+          public IActionResult Products(int CatId)
+            {
+                List<Product> products = context.Products.Where(n => n.CategoryId == CatId).ToList();
+                return PartialView("_Products", products);
+            }
+
+
+        public IActionResult ProductDetails(int id)
+        {
+            Product product = context.Products.FirstOrDefault(n => n.Id == id);
+              return View(product);
+        }
         public IActionResult Privacy()
         {
             return View();
