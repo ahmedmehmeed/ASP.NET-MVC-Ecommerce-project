@@ -1755,9 +1755,6 @@ E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Cart\Index.cshtml.g.cs
 E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Category\Add.cshtml.g.cs
 E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Category\Edit.cshtml.g.cs
 E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
-E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Checkout\Add.cshtml.g.cs
-E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Checkout\Details.cshtml.g.cs
-E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Courier\Index.cshtml.g.cs
 E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Order\Add.cshtml.g.cs
 E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Order\Delete.cshtml.g.cs
 E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Order\Details.cshtml.g.cs
@@ -2237,3 +2234,7 @@ D:\Project - Copy - Copy\Ecommerce\obj\Debug\net5.0\Ecommerce.Views.pdb
 D:\Project - Copy - Copy\Ecommerce\obj\Debug\net5.0\Ecommerce.csproj.CopyComplete
 D:\Project - Copy - Copy\Ecommerce\obj\Debug\net5.0\Ecommerce.genruntimeconfig.cache
 D:\Project - Copy - Copy\Ecommerce\obj\Debug\net5.0\ref\Ecommerce.dll
+E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\CustomerProduct\Index.cshtml.g.cs
+E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Product\Add.cshtml.g.cs
+E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Product\Edit.cshtml.g.cs
+E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
