@@ -2693,3 +2693,5 @@ C:\Users\Hend\Documents\GitHub\MVC\Ecommerce\obj\Debug\net5.0\Ecommerce.dll
 C:\Users\Hend\Documents\GitHub\MVC\Ecommerce\obj\Debug\net5.0\ref\Ecommerce.dll
 C:\Users\Hend\Documents\GitHub\MVC\Ecommerce\obj\Debug\net5.0\Ecommerce.pdb
 C:\Users\Hend\Documents\GitHub\MVC\Ecommerce\obj\Debug\net5.0\Ecommerce.genruntimeconfig.cache
+E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Home\ProductDetails.cshtml.g.cs
+E:\PROJECT\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Shared\_CustomerLayout.cshtml.g.cs
