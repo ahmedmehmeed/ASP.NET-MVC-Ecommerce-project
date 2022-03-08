@@ -25,7 +25,11 @@ namespace Ecommerce.Repository
             return category;
 
         }
-
+        public List<Product> Getallproductsbycatid(int catid)
+        {
+            List<Product> productlist = Db.Products.Where(e=>e.CategoryId==catid).ToList();
+            return productlist;
+        }
         public void Insert(Category category)
         {
 

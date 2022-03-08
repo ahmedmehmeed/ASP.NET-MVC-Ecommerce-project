@@ -19,6 +19,12 @@ namespace Ecommerce.Controllers
             List<Category> categories = categoryRepository.Getall();
             return View(categories);
         }
+
+        public IActionResult allproductsbycatid(int catid)
+        {
+            List<Product> products = categoryRepository.Getallproductsbycatid(catid);
+            return View(products);
+        }
        
         public IActionResult Details(int id)
         {
