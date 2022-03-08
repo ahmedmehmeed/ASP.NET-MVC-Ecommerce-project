@@ -34,8 +34,8 @@
      <td>ay7aga</td>
       <td>
  @*    // should be anchor not button to use asp-action &Aacute; asp-controller*@
-        <a type="button" class="btn-outline-warning  rounded mx-1 p-1" asp-action="Edit" asp-controller="Product" asp-route-id="@item.Id" >Edit</a>
-         <a type="button" class="btn-outline-danger rounded p-1" asp-action="Delete" asp-controller="Product" asp-route-id="@item.Id">Delete</a>
+        <a @*type="button"*@ class="btn-outline-warning  rounded mx-1 p-1" asp-action="Edit" asp-controller="Product" asp-route-id="@item.Id" >Edit</a>
+         <a @*type="button"*@ class="btn-outline-danger rounded p-1" asp-action="Delete" asp-controller="Product" asp-route-id="@item.Id">Delete</a>
        
        </td>
     </tr>
