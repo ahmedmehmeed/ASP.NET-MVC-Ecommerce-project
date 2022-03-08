@@ -1,34 +1,5 @@
 ﻿@model List<Category>
 
-@*<h2 style="color:rgb(78 115 223);">Select Category</h2>
-<br />
-
-<select id="categories" class ="form-control" onchange="getAll()" >
-    @foreach (var item in Model)
-   {
-        <option value="@item.Id">@item.Name</option>       
-   }
-</select>
-
-<div id = "Products"></div>
-<script>
-    
-    function getAll(){
-        var Id=$("#categories").val();
-        
-        $.ajax(
-            {
-                url: `/Home/Products?CatId=${Id}`,
-                
-                success: function(result){
-                    
-                    $("#Products").html(result);
-                }
-            }
-         );
-    }
-</script>*@
-
 
 
 
@@ -53,8 +24,7 @@
                             <div class="inner-content">
                                 <h4>We Are Passionis</h4>
                                 <div class="main-border-button">
-@*                                    <a href="#">Purchase Now!</a>
-*@                                </div>
+                                </div>
                             </div>
                             <img src="/Images/left-banner-image.jpg" alt="">
                         </div>
@@ -75,7 +45,7 @@
                                                 <h4>Women</h4>
                                                 <p> women's clothing is line of representation of woman's body confidence which make her stylish.</p>
                                                 <div class="main-border-button">
-                                                    <a href="#women">Discover More</a>
+                                                    <a href="#women">Discover Women</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -95,7 +65,7 @@
                                                 <h4>Men</h4>
                                                 <p>The latest tips and advice for men on style, grooming, fitness and more.</p>
                                                 <div class="main-border-button">
-                                                    <a href="#men">Discover More</a>
+                                                    <a href="#men">Discover Men</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -115,7 +85,7 @@
                                                 <h4>Kids</h4>
                                                 <p> Young children can now enjoy a varied and extensive range of fashion clothes.</p>
                                                 <div class="main-border-button">
-                                                    <a href="#kids">Discover More</a>
+                                                    <a href="#kids">Discover Kids</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -147,12 +117,41 @@
     <!-- ***** Main Banner Area End ***** -->
 
 
+    
+<h2 class ="mt-5"  style="color:rgb(78 115 223);">Select Category</h2>
+<br />
+
+<select id="categories" class ="form-control" onchange="getAll()" >
+    @foreach (var item in Model)
+   {
+        <option value="@item.Id">@item.Name</option>       
+   }
+</select>
+
+<div id = "Products" ></div>
+<script>
+    
+    function getAll(){
+        var Id=$("#categories").val();
+        
+        $.ajax(
+            {
+                url: `/Home/Products?CatId=${Id}`,
+                
+                success: function(result){
+                    
+                    $("#Products").html(result);
+                }
+            }
+         );
+    }
+</script>
 
 
 
 
  <!-- ***** Men Area Starts ***** -->
-    <section class="section" id="men">
+ @*   <section class="section" id="men">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -266,11 +265,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>*@
     <!-- ***** Men Area Ends ***** -->
 
     <!-- ***** Women Area Starts ***** -->
-    <section class="section" id="women">
+   @* <section class="section" id="women">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -383,11 +382,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>*@
     <!-- ***** Women Area Ends ***** -->
 
     <!-- ***** Kids Area Starts ***** -->
-    <section class="section" id="kids">
+   @* <section class="section" id="kids">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -499,8 +498,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </div>*@
+ @*   </section>*@
     <!-- ***** Kids Area Ends ***** -->
 
 
