@@ -5,10 +5,7 @@
     ViewData["Title"] = "Index";
     Layout = "_Layout";
 }
-
-
-
-
+bottom
 
 
 <!-- ***** Main Banner Area Start ***** -->
@@ -24,55 +21,21 @@
         </div>
     </div>
     <!-- ***** Main Banner Area End ***** -->
-@*<!-- Section-->
-
-        <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-3 gx-lg-5 row-cols-1 row-cols-md-3 row-cols-xl-3 justify-content-center">
-                        @foreach(var item in Model){
-
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="/Images/@item.Image" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">@item.Name</h5>
-                                    <!-- Product price-->
-                                    @item.Price
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Home/ProductDetails/@item.Id">Details</a></div>
-                            </div>
-                        </div>
-                        
-                    </div>
-               
-                   }
-                
-                </div>
-                
-            </div>
-        </section>
-*@        
+     
 
 
 
-<h2 class ="mt-5"  style="color:rgb(78 115 223);">Select Category</h2>
+<h1 class ="mt-5"  style="color:#6A040F ; font-weight:bolder; margin-top:100px; margin-left:400px;">Select Category</h1>
 <br />
 
-<select id="categories" class ="form-control" onchange="getAll()" >
+<select id="categories" class ="form-control" onchange="getAll()"  >
     @foreach (var item in Model)
    {
         <option value="@item.Id">@item.Name</option>       
    }
 </select>
 
-<div id = "Products" ></div>
+<div id = "Products" style="margin-bottom:200px;"></div>
 <script>
     
     function getAll(){

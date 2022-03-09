@@ -1,10 +1,16 @@
 ﻿
 @model List<Category>
-<table class="table table-striped  box-shadow table-responsive-md  " style="margin-top:150px;">
+
+
+
+
+    <h1 style="color:/*#14213D*/ black; margin-top:150px; font-weight:bolder;margin-left:360px;">Add New Category <img src="/Images/i-love-you (2).png"/> </h1>
+
+<table class="table table-striped  box-shadow table-responsive-md  " style="margin-top:50px;">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">name</th>
+      <th scope="col" >Name</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -16,8 +22,8 @@
       <td scope="row">@item.Id</td>
       <td>@item.Name</td>
       <td class="text-right">
-          <a asp-action="Edit" class="btn btn-outline-primary TEXT-right"  asp-controller="Category" asp-route-id = "@item.Id">Edit Category</a>
-         <a asp-action="Delete" class="btn btn-outline-danger " asp-controller="Category" asp-route-id = "@item.Id" onclick="ConfirmDelete()">Delete</a>
+          <a asp-action="Edit" class="btn btn-outline-danger  TEXT-right"  asp-controller="Category" asp-route-id = "@item.Id" style=" color:#590D22;">Edit Category</a>
+         <a asp-action="Delete" class="btn btn-outline-warning  " asp-controller="Category" asp-route-id = "@item.Id" onclick="ConfirmDelete()" style="color:#E85D04" >Delete</a>
       </td>
      
     </tr>
@@ -30,7 +36,7 @@
 </table>
 <div class="row d-flex flexflex-column align-items-center">
     
-  <a asp-action="Add" asp-controller="Category"  class="btn btn-outline-success rounded col-2 text-large mx-auto ">Add New Category</a>
+  <a asp-action="Add" asp-controller="Category"  class="btn btn-outline-dark rounded col-2 text-large mx-auto font-weight-bold  " style=" margin-top:30px; border:1px solid black; " >Add New Category</a>
 </div>
  
 <script>

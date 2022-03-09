@@ -17,16 +17,16 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="Name" class="control-label">Category name</label>
-                <input asp-for="Name"  class="form-control" />
+                <label asp-for="Name" class="control-label" style=" font-weight:bold; font-size : 30px; color:#6A040F ;">Category name</label>
+                <input asp-for="Name"  class="form-control" style=" border-color:#9D0208 ; margin-bottom:20px;" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group text-center">
-                <input type="submit" value="Add" class="btn btn-outline-primary" />
+                <input type="submit" value="Add" class="btn btn-outline-light font-weight-bold " style="border-color:#9D0208 ; color:/*#14213D*/ black;"/>
             </div>
         </form>
         <div class="text-right">
-             <a asp-action="Index">Back to List</a>
+             <a asp-action="Index" style=" margin-right:120px; color:black; font-weight:bold; font-size:20px;" >Back to List</a>
         </div>
     </div>
 </div>

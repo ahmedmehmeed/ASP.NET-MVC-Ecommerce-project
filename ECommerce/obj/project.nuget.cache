@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "urCHSD5AVSmjzI+2qxnNhoHGshne3yfWVTPMkOQnOJwAtaxSC/XzCdKS11hUdzcSM/At+1AMDmc+clhWQbc3tw==",
+  "dgSpecHash": "zdtswn9eP+zfMN1YW1a66zoYuTEMUdsDrYnuk2OHREQiB7FC+E/VR19RXeuaRpUHP6ZzGbJ84I0BSwoYovs12Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hend\\Documents\\GitHub\\Ecommerce\\Ecommerce.csproj",
+  "projectFilePath": "D:\\MVC\\Ecommerce\\Ecommerce.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hend\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Hend\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

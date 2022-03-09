@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hend\\Documents\\GitHub\\Ecommerce\\Ecommerce.csproj": {}
+    "D:\\MVC\\Ecommerce\\Ecommerce.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hend\\Documents\\GitHub\\Ecommerce\\Ecommerce.csproj": {
+    "D:\\MVC\\Ecommerce\\Ecommerce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hend\\Documents\\GitHub\\Ecommerce\\Ecommerce.csproj",
+        "projectUniqueName": "D:\\MVC\\Ecommerce\\Ecommerce.csproj",
         "projectName": "Ecommerce",
-        "projectPath": "C:\\Users\\Hend\\Documents\\GitHub\\Ecommerce\\Ecommerce.csproj",
+        "projectPath": "D:\\MVC\\Ecommerce\\Ecommerce.csproj",
         "packagesPath": "C:\\Users\\Hend\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hend\\Documents\\GitHub\\Ecommerce\\obj\\",
+        "outputPath": "D:\\MVC\\Ecommerce\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hend\\AppData\\Roaming\\NuGet\\NuGet.Config",
