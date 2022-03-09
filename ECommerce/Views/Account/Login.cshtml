@@ -4,22 +4,20 @@
     ViewData["Title"] = "Login";
 }
 
-<h1>Login</h1>
+<h1 style="color:/*#14213D*/ black; margin-top:150px; font-weight:bolder;margin-left:500px;">Login <img src="/Images/i-love-you (2).png"/> </h1>
 
-<h4>LoginViewModel</h4>
-<hr />
-<div class="row">
+<div class="row" style="margin-left:350px;">
     <div class="col-md-4">
-        <form asp-action="Login">
+        <form asp-action="Login" style=" margin-top:50px; width:400px; ">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="username" class="control-label"></label>
-                <input asp-for="username" class="form-control" />
+                <label asp-for="username" class="control-label" style=" font-weight:bold; font-size : 20px; color:#6A040F ;" ></label>
+                <input asp-for="username" class="form-control" style=" border-color:#9D0208 ; margin-bottom:20px />
                 <span asp-validation-for="username" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="password" class="control-label"></label>
-                <input asp-for="password" class="form-control" />
+                <label asp-for="password" class="control-label" style=" font-weight:bold; font-size : 20px; color:#6A040F ;" ></label>
+                <input asp-for="password" class="form-control" style=" border-color:#9D0208 ; margin-bottom:20px />
                 <span asp-validation-for="password" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
@@ -28,14 +26,14 @@
                 </label>
             </div>
             <div class="form-group">
-                <input type="submit" value="Login" class="btn btn-primary" />
+                <input type="submit" value="Login" class="btn btn-light" style="color:/*#14213D*/ black; font-weight:bold; " />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a href="\Account\Register" >Back to Register</a>
+    <a href="/Account/Register" style=" color:/*#14213D*/ black; /*font-weight:bold;*/ margin-left:500px; /*font-s-moz-border-radius;*/ border: 1px solid #9D0208 ; border-radius:5px; border-spacing:20px;" >Back to Register</a>
 </div>
 
 @section Scripts {

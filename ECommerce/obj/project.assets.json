@@ -9219,19 +9219,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mm\\.nuget\\packages\\": {}
+    "C:\\Users\\Hend\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Mvc project\\MVC\\Ecommerce\\Ecommerce.csproj",
+      "projectUniqueName": "D:\\Cut MVC\\Ecommerce\\Ecommerce.csproj",
       "projectName": "Ecommerce",
-      "projectPath": "E:\\Mvc project\\MVC\\Ecommerce\\Ecommerce.csproj",
-      "packagesPath": "C:\\Users\\mm\\.nuget\\packages\\",
-      "outputPath": "E:\\Mvc project\\MVC\\Ecommerce\\obj\\",
+      "projectPath": "D:\\Cut MVC\\Ecommerce\\Ecommerce.csproj",
+      "packagesPath": "C:\\Users\\Hend\\.nuget\\packages\\",
+      "outputPath": "D:\\Cut MVC\\Ecommerce\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hend\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
