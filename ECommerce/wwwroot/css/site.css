@@ -89,7 +89,7 @@ body {
     height: 350px;
     position: relative;
     overflow: hidden;
-    cursor: pointer
+    cursor: pointer;
 }
 
     .container-overlay-products .product-item .product img {

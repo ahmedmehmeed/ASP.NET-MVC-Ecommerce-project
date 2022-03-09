@@ -23,7 +23,7 @@
         </div>
     </div>
     <!-- ***** Main Banner Area End ***** -->
-<!-- Section-->
+@*<!-- Section-->
 
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
@@ -57,4 +57,45 @@
                 
             </div>
         </section>
+*@        
+
+
+
+<h2 class ="mt-5"  style="color:rgb(78 115 223);">Select Category</h2>
+<br />
+
+<select id="categories" class ="form-control" onchange="getAll()" >
+    @foreach (var item in Model)
+   {
+        <option value="@item.Id">@item.Name</option>       
+   }
+</select>
+
+<div id = "Products" ></div>
+<script>
+    
+    function getAll(){
+        var Id=$("#categories").val();
         
+        $.ajax(
+            {
+                url: `/Home/Products?CatId=${Id}`,
+                
+                success: function(result){
+                    
+                    $("#Products").html(result);
+                }
+            }
+         );
+    }
+</script>
+
+
+
+
+
+
+
+
+
+

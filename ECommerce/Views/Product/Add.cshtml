@@ -6,31 +6,32 @@
 
 }
 
+<h1 style="color:/*#14213D*/ black; margin-top:150px; font-weight:bolder;margin-left:390px;">Add A Product <img src="/Images/i-love-you (2).png"/> </h1>
 
-<form asp-action="Add" asp-controller="Product" method="post" enctype="multipart/form-data"  class="d-flex flex-column mx-auto w-50 bg-transparent shadow-sm" >
-    <div asp-validation-summary="All" class="text-danger">
+<form asp-actio-moz-text-size-adjustd" asp-controller="Product" method="post" enctype="multipart/form-data"  class="d-flex flex-column mx-auto  bg-transparent shadow-sm  " style=" margin-top:50px; width:400px; " >
+   @* <div asp-validation-summary="All" class="text-danger">
 
-    </div>
+    </div>*@
     <div class="form-group">
-        <label asp-for="Name"></label>
-        <input asp-for="Name" class="form-control" />
+        <label asp-for="Name" style=" font-weight:bold; font-size : 20px; color:#6A040F ;" ></label>
+        <input asp-for="Name" class="form-control"  style=" border-color:#9D0208 ; margin-bottom:20px;"/>
         <span asp-validation-for="Name" class="text-danger" ></span>
     </div>
       <div class="form-group">
-        <label asp-for="Description"></label>
-        <input asp-for="Description" class="form-control" />
+        <label asp-for="Description" style=" font-weight:bold; font-size : 20px;  color:#6A040F ; " ></label>
+        <input asp-for="Description" class="form-control" style=" border-color:#9D0208 ; margin-bottom:20px; " />
         <span asp-validation-for="Description" class="text-danger" ></span>
     </div>
 
 
         <div class="form-group">
-        <label asp-for="Image"></label>
-        <input type="file" asp-for="Image" accept="image/*"  class="form-control" />
+        <label asp-for="Image" style=" font-weight:bold; font-size : 20px;  color:#6A040F ; " ></label>
+        <input type="file" asp-for="Image" accept="image/*"  class="form-control"  style=" border-color:#9D0208 ; margin-bottom:20px; " />
          <span asp-validation-for="Image" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Price"></label>
-        <input asp-for="Price" class="form-control" />
+        <label asp-for="Price" style=" font-weight:bold; font-size : 20px;  color:#6A040F ; " ></label>
+        <input asp-for="Price" class="form-control" style=" border-color:#9D0208 ; margin-bottom:20px;"  />
          <span asp-validation-for="Price" class="text-danger"></span>  
     </div>
    
@@ -39,8 +40,8 @@
     
 
     <div class="form-group">
-  <label asp-for="CategoryId" >Category</label>
-  <select asp-for="CategoryId" asp-items="sel" class="form-control">
+  <label asp-for="CategoryId" style=" font-weight:bold; font-size : 20px;  color:#6A040F ;" >Category</label>
+  <select asp-for="CategoryId" asp-items="sel" class="form-control" style=" border-color:#9D0208 ; margin-bottom:40px; ">
 
   </select>
     </div>
@@ -49,7 +50,7 @@
   
 
   <div class="form-group">
-    <input type="submit" value="add" class="btn-outline-success form-control"  />
+    <input type="submit" value="Add" class=" btn-outline-light font-weight-bold  form-control" style=" border-color:#9D0208 ; color:/*#14213D*/ black; margin-bottom:20px; " />
    </div>
 </form>
 
