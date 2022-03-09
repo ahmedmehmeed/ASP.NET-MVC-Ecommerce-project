@@ -60,7 +60,7 @@ namespace Ecommerce.Controllers
                     await signInManager.SignInAsync(IdentityUser, false);
 
                     //authorize id cookie
-
+                    return RedirectToAction("Index", "Home");
 
                 }
                 else
@@ -87,6 +87,7 @@ namespace Ecommerce.Controllers
 
 
         [HttpPost]
+        
         public async Task< IActionResult> Login(LoginViewModel loginView)
         {
             if (ModelState.IsValid)
@@ -95,10 +96,10 @@ namespace Ecommerce.Controllers
                 if (User != null)
                 {
 
-                 var log = await  signInManager.PasswordSignInAsync(User,loginView.password,loginView.persist,false);
+                 var log = await  signInManager.PasswordSignInAsync(User,loginView.password,false,false);
                     if (log.Succeeded)
                     {
-                        return View("Register");
+                        return RedirectToAction("Index","Home");
                     }
                     else
                         ModelState.AddModelError("", "password invalid");
@@ -113,18 +114,14 @@ namespace Ecommerce.Controllers
 
 
             }
-
-
-
             return View(loginView);
         }
 
-
-
-
-        public IActionResult  Logout()
+        public async Task<IActionResult>  Logout()
         {
-            signInManager.SignOutAsync();
+         await   signInManager.SignOutAsync();
+           
+          
 
             return RedirectToAction("Login");
         }

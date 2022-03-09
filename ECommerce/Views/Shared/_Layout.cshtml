@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 
-
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 
@@ -30,7 +29,6 @@
     
     <body>
 
-
         <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container mb-5" >
@@ -43,41 +41,45 @@
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li class="scroll-to-section"><a href="/Home" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#men">Men's</a></li>
-                            <li class="scroll-to-section"><a href="#women">Women's</a></li>
-                            <li class="scroll-to-section"><a href="#kids">Kid's</a></li>
-                            <li class="submenu">
-                                <a href="javascript:;">Pages</a>
-                                <ul>
+                         <ul class="nav">
+                         
+                            @{
+                                if (User.Identity.IsAuthenticated == true)
+                            {
+                                    <li class="scroll-to-section"><a href="/Home/index" class="active">Home</a></li>
+                                    <li class="scroll-to-section"><a href="#men">Men's</a></li>
+                                    <li class="scroll-to-section"><a href="#women">Women's</a></li>
+                                    <li class="scroll-to-section"><a href="#kids">Kid's</a></li>
+                                   <li class="submenu">
+                                        <a href="javascript:;">Pages</a>
+                                        <ul>
+
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="contact.html">Contact Us</a></li>
+
+                                        </ul>
+                                    </li>
+                                        
+                                @if (User.IsInRole("Customer"))
+                                {
+
                                     <li><a href="/CustomerProduct/Index">Products</a></li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </li>
-                            <li class="scroll-to-section"><a href="/Account/Login">Login</a></li>
-                           
-                            <li class="scroll-to-section"><a href="/Product/Index">products</a></li>
-                            <li class="scroll-to-section"><a href="/Category/index">Category</a></li>
+                                 <li class="scroll-to-section"><a asp-action="Logout" asp-controller="Account">Log out</a></li>   
 
+                                }
 
+                                @if (User.IsInRole("Admin"))
+                                {
 
+                                    <li class="scroll-to-section"><a href="/Product/Index">products</a></li>
+                                    <li class="scroll-to-section"><a href="/Category/index">Category</a></li>
+                                    <li class="scroll-to-section"><a  asp-action="Logout" asp-controller="Account">Log out</a></li>
 
-
-
-
-                            @*<li class="submenu">
-                                <a href="javascript:;">Features</a>
-                                <ul>
-                                    <li><a href="#">Features Page 1</a></li>
-                                    <li><a href="#">Features Page 2</a></li>
-                                    <li><a href="#">Features Page 3</a></li>
-                                    <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
-                                </ul>
-                            </li>
-                            <li class="scroll-to-section"><a href="#explore">Explore</a></li>*@
+                                }
+                            }
+                            }
                         </ul>        
+                        
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
