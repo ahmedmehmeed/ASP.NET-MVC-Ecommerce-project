@@ -4102,3 +4102,5 @@ D:\MVC\Ecommerce\obj\Debug\net5.0\Ecommerce.RazorTargetAssemblyInfo.cs
 D:\MVC\Ecommerce\obj\Debug\net5.0\Ecommerce.Views.pdb
 D:\MVC\ECommerce\obj\Debug\net5.0\Ecommerce.csproj.CopyComplete
 D:\MVC\ECommerce\obj\Debug\net5.0\Ecommerce.genruntimeconfig.cache
+E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Home\AboutUs.cshtml.g.cs
+E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Home\ContactUs.cshtml.g.cs
