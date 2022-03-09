@@ -3159,3 +3159,12 @@ D:\Cut MVC\Ecommerce\obj\Debug\net5.0\Ecommerce.dll
 D:\Cut MVC\Ecommerce\obj\Debug\net5.0\ref\Ecommerce.dll
 D:\Cut MVC\Ecommerce\obj\Debug\net5.0\Ecommerce.pdb
 D:\Cut MVC\Ecommerce\obj\Debug\net5.0\Ecommerce.genruntimeconfig.cache
+E:\Mvc project\MVC\Ecommerce\bin\Debug\net5.0\EntityFramework.SqlServer.dll
+E:\Mvc project\MVC\Ecommerce\bin\Debug\net5.0\EntityFramework.dll
+E:\Mvc project\MVC\Ecommerce\bin\Debug\net5.0\System.CodeDom.dll
+E:\Mvc project\MVC\Ecommerce\bin\Debug\net5.0\System.Data.SqlClient.dll
+E:\Mvc project\MVC\Ecommerce\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+E:\Mvc project\MVC\Ecommerce\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+E:\Mvc project\MVC\Ecommerce\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+E:\Mvc project\MVC\Ecommerce\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Mvc project\MVC\Ecommerce\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

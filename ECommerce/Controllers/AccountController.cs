@@ -24,7 +24,7 @@ namespace Ecommerce.Controllers
       // register
       [HttpGet]
 
-      [Authorize]
+    
         public IActionResult Register()
         {
             return View();
