@@ -3633,3 +3633,5 @@ C:\Users\Hend\Documents\GitHub\Ecommerce\obj\Debug\net5.0\Ecommerce.dll
 C:\Users\Hend\Documents\GitHub\Ecommerce\obj\Debug\net5.0\ref\Ecommerce.dll
 C:\Users\Hend\Documents\GitHub\Ecommerce\obj\Debug\net5.0\Ecommerce.pdb
 C:\Users\Hend\Documents\GitHub\Ecommerce\obj\Debug\net5.0\Ecommerce.genruntimeconfig.cache
+C:\Users\Hend\Documents\GitHub\Ecommerce\obj\Debug\net5.0\Razor\Views\Us\AboutUs.cshtml.g.cs
+C:\Users\Hend\Documents\GitHub\Ecommerce\obj\Debug\net5.0\Razor\Views\Us\ContactUs.cshtml.g.cs
