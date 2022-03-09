@@ -4,28 +4,28 @@
     ViewData["Title"] = "AddRole";
 }
 
-<h1 style="margin-top:150px;">AddRole</h1>
+<h1 style="margin-top:150px;font-weight:bolder; margin-left:460px; margin-bottom:30px;">Add Role</h1>
 
-<h4>RoleViewModel</h4>
-<hr />
-<div class="row">
+
+
+<div class="row" style="margin-left:350px;">
     <div class="col-md-4" >
-        <form asp-action="AddRole" asp-controller="Role" method="post">
+        <form asp-action="AddRole" asp-controller="Role" method="post" style="width:400px;">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Role" class="control-label"></label>
-                <input asp-for="Role" class="form-control" />
+                <label asp-for="Role" class="control-label" style="  font-size : 20px; color:#6A040F ;"></label>
+                <input asp-for="Role" class="form-control" style=" border-color:#9D0208 ; margin-bottom:20px;"/>
                 <span asp-validation-for="Role" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-outline-light font-weight-bold" style="border-color:#9D0208 ; color:/*#14213D*/ black; margin-left:150px;" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" style=" margin-right:120px; color:black; font-weight:bold; font-size:20px;margin-left:500px;">Back to List</a>
 </div>
 
 @section Scripts {
