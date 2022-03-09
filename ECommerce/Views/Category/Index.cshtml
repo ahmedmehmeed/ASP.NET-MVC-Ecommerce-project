@@ -1,27 +1,4 @@
-﻿@*@model List<Category>
-
-<table class = "table table-hover table-bordered ">
-    <tr class="text-center">
-        <th>id</th>
-        <th>name</th>
-
-    </tr>
-    @foreach(var i in Model)
-    {
-        <tr class="text-center">
-            <td>@i.Id</td>
-            <td>@i.Name</td>
-
-            <td><a asp-action="Edit" class="btn btn-outline-primary"  asp-controller="Category" asp-route-id = "@i.Id">Edit Category</a></td>
-            <td><a asp-action="Delete" class="btn btn-outline-danger" asp-controller="Category" asp-route-id = "@i.Id" onclick="ConfirmDelete()">Delete</a></td>
-        </tr>
-    }
-</table>
-<div class="text-center">
-<a  asp-action="Add" asp-controller="Category"  class="btn btn-primary">Add New</a>
-
-</div>*@
-
+﻿
 @model List<Category>
 <table class="table table-striped mt-4 box-shadow table-responsive-md " >
   <thead>

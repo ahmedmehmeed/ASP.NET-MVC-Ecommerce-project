@@ -2702,3 +2702,4 @@ E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Product\Edit.cshtml.g.
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Shared\_CustomerLayout.cshtml.g.cs
 E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Shared\_Products.cshtml.g.cs
+E:\Mvc project\MVC\Ecommerce\obj\Debug\net5.0\Razor\Views\Home\SaveToCart.cshtml.g.cs

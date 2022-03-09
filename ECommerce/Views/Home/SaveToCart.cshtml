@@ -1,0 +1,42 @@
+﻿
+
+@*مش شغااااالة
+*@
+@*/////////////////////////////////*@
+@*@model IEnumerable<Cart>
+
+
+
+@{
+ViewData["Title"] = "Index";
+}
+
+
+
+<table class="table container" style="width:fit-content; margin-top:50px; text-align:center;
+color:var(--main-color-opp);">
+<thead>
+
+</thead>
+<tbody>
+@foreach (var item in Model) {
+<tr>
+<td>
+@Html.DisplayFor(modelItem => item.Id)
+</td>
+<td>
+@Html.DisplayFor(modelItem => item.Count)
+</td>
+<td>
+@Html.DisplayFor(modelItem => item.price)
+</td>
+
+<td>
+<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+<a asp-action="Details" asp-controller="Product" asp-route-id="@item.Id">Details</a> |
+<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+</td>
+</tr>
+}
+</tbody>
+</table>*@

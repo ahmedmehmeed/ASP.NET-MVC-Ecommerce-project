@@ -9,5 +9,6 @@ namespace Ecommerce.Repository
         List<Cart> Getall();
         Cart GetById(int id);
         void Insert(Cart cart);
+
     }
 }

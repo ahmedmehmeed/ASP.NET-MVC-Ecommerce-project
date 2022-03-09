@@ -1,5 +1,6 @@
 ﻿using Ecommerce.Models;
 using Ecommerce.Repository;
+using Ecommerce.View_Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -14,11 +15,13 @@ namespace Ecommerce.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         ICategoryRepository categoryRepository;
+        IProductRepository productRepository;
         ECommerceEntity context;
-        public HomeController(ILogger<HomeController> logger,ICategoryRepository categoryRepository  )
+        public HomeController(ILogger<HomeController> logger,ICategoryRepository categoryRepository ,IProductRepository productRepository )
         {
             _logger = logger;
             this.categoryRepository = categoryRepository;
+            this.productRepository = productRepository;
             context= new ECommerceEntity();
         }
 
@@ -41,6 +44,18 @@ namespace Ecommerce.Controllers
             Product product = context.Products.FirstOrDefault(n => n.Id == id);
               return View(product);
         }
+       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult SaveToCart(int id)
+        {
+            Product product = productRepository.GetById(id);
+                ViewBag.product = product;
+                return View(new Cart());
+            
+        }
+
+
         public IActionResult Privacy()
         {
             return View();
